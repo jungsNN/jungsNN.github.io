@@ -13,6 +13,13 @@
     "moduleResolution": "node",
     "noEmit": true,
     "outDir": "./dist",
+    "paths": {
+      "@/components/*": ["./components/*"],
+      "@/models/*": ["./models/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/utils/*": ["./utils/*"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,

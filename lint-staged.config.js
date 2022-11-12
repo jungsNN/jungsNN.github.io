@@ -1,3 +1,4 @@
+// @ts-nocheck
 module.exports = {
   // type check typescirpt files
   './src/**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
