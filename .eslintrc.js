@@ -13,6 +13,7 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
     'plugin:prettier/recommended',
   ],
   parserOptions: {
@@ -22,7 +23,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['react'],
   rules: {
     // Possible errors
     'no-console': 'warn',
