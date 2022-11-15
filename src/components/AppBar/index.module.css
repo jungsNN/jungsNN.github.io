@@ -1,0 +1,128 @@
+.appbarWrapper {
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: auto;
+    z-index: 999;
+  }
+  
+  .appbar {
+    align-items: center;
+    position: relative;
+    display: grid;
+    flex-direction: row;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    min-height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 5%;
+    z-index: 20;
+  }
+  
+  .socialLink {
+    margin-right: 15px;
+    color: var(--text-info);
+    font-weight: 700;
+  }
+  
+  .wInlineBlock {
+    max-width: 15px;
+    display: inline-block;
+  }
+  
+  .logoWrapper {
+    grid-column-start: span 1;
+    grid-column-end: span 1;
+    grid-row-start: span 1;
+    grid-row-end: span 1;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    --webkit-box-pack: center;
+  }
+  
+  .menuButtonWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    height: 70px;
+    order: 1;
+    --webkit-box-direction: normal;
+    --webkit-box-ordinal-group: 2;
+    --webkit-box-orient: horizontal;
+    --webkit-box-pack: end;
+  }
+
+  .menuLabelWrapper {
+    flex: 0 0 auto;
+    font-size: 16px;
+    font-weight: 700;
+    height: 20px;
+    margin-left: 5px;
+    overflow: hidden;
+    --webkit-box-flex: 0;
+  }
+  
+  .hamburger {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    order: 1;
+    position: relative;
+    z-index: 2;
+    --webkit-box-align: center;
+    --webkit-box-ordinal-group: 2;
+  }
+  
+  .hamburgerMenu {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    --webkit-box-align: center;
+    --webkit-box-pack: center;
+  }
+  
+  .hamburgerMenu,
+  ._2 {
+    border-radius: 100%;
+    flex-direction: row;
+    height: 60px;
+    width: 60px;
+    --webkit-box-orient: horizontal;
+    --webkit-box-direction: normal;
+  }
+  
+  .open {
+    position: relative;
+    z-index: 2;
+    width: 40px;
+  }
+  
+  .open svg {
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  .remove {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+  }
+  
+  .remove svg {
+    display: inline-block;
+    max-width: 100%;
+  }
+  

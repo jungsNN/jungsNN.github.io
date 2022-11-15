@@ -13,6 +13,52 @@
   align-items: center;
 }
 
+.hero {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  min-height: auto;
+  position: relative;
+}
+
+.intro {
+  min-height: auto;
+  padding: 170px 0% 215px;
+}
+
+/* Top hero */
+.author {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 5vw;
+  font-weight: 700;
+  text-align: right;
+}
+
+.splashWrapper {
+  position: relative;
+  left: 0%;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.textRotator {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 7vw;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.startIcon {
+  width: 44px;
+  height: 44px;
+}
+
 .footer {
   display: flex;
   flex: 1;
@@ -40,8 +86,9 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  line-height: 1.4;
+  font-size: 9vw;
+  font-weight: 700;
 }
 
 .title,
@@ -63,12 +110,29 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.section {
+  position: relative;
+}
+
 .grid {
+  align-items: flex-start;
   display: flex;
-  align-items: center;
+  flex: 1;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+  /* flex-wrap: wrap; */
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  gap: 100px;
+}
+
+.grid,
+._2 {
+  max-width: 1200px;
 }
 
 .card {
@@ -92,6 +156,7 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .card p {
@@ -103,6 +168,10 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.wrapper {
+  width: auto;
 }
 
 @media (max-width: 600px) {

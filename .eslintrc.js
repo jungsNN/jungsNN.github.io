@@ -77,6 +77,7 @@ module.exports = {
         checkAliases: true,
       },
     ],
+    'react/prop-types': 0,
     'react/jsx-sort-props': [
       'error',
       {
