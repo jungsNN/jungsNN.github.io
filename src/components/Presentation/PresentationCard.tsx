@@ -5,7 +5,7 @@ import styles from './index.module.css'
 interface PresentationCardProps {
   path: string
   title: string
-  previewImg?: string
+  previewImg: string
 }
 
 const PresentationCard: React.FunctionComponent<PresentationCardProps> = (
@@ -17,7 +17,7 @@ const PresentationCard: React.FunctionComponent<PresentationCardProps> = (
       className={cn([styles.presentationWrapper, styles.wInlineBlock])}
       href={`${path}/${title}`}
     >
-      <div>{previewImg ?? 'img card'}</div>
+      <img alt={title} src={previewImg} />
       <div className="m-5">
         <div className={styles.withArrow}>
           <h2 className={styles.presentationTitle}>{title}</h2>

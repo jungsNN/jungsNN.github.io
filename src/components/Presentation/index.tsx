@@ -1,21 +1,29 @@
 import PresentationCard from './PresentationCard'
 import styles from './index.module.css'
+import { PresentationContent } from '@/models/presentation'
 
 interface PresentationProps {
+  contents: PresentationContent[]
+  label: string
   path: string
-  title: string
 }
 
 const Presentation: React.FunctionComponent<PresentationProps> = (props) => {
-  const { path, title } = props
+  const { contents, label, path } = props
   return (
     <div className={styles.sectionGrid}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
-      <div className={styles.presentationCols}>
-        <PresentationCard path={path} title="Project 1" />
-        <PresentationCard path={path} title="Project 2" />
-        <PresentationCard path={path} title="Project 3" />
-      </div>
+      <h2 className={styles.sectionTitle}>{label}</h2>
+      <ul className={styles.presentationCols}>
+        {contents.map((content) => (
+          <li key={content.title}>
+            <PresentationCard
+              path={path + '/' + content.slug}
+              previewImg={content.previewImgUrl}
+              title={content.title}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
