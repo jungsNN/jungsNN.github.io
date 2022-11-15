@@ -9,17 +9,8 @@ interface MenuProps {
 const Menu: React.FunctionComponent<MenuProps> = (props) => {
   const { isOpen } = props
 
-  return (
-    <div
-      className={cn([
-        styles.menu,
-        {
-          'display-none': !isOpen,
-          'display-flex opacity-1': isOpen,
-          'bg-blue': isOpen,
-        },
-      ])}
-    >
+  return isOpen ? (
+    <div className={cn([styles.menu, 'bg-background flex opacity-1'])}>
       <div className={cn([styles.menuContainer, styles._2])}>
         <div>
           <div className={styles.navigationContent}>
@@ -122,6 +113,8 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
         </div>
       </div>
     </div>
+  ) : (
+    <></>
   )
 }
 

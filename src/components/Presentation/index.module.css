@@ -1,12 +1,12 @@
 .sectionGrid {
-    align-items: center;
+    align-items: start;
     display: grid;
     grid-auto-columns: 1fr;
     grid-column-gap: 40px;
     grid-row-gap: 16px;
     grid-template-columns: 0.25fr 1fr;
     grid-template-rows: auto;
-  }
+  } 
   
   .sectionTitle {
     margin-top: 0px;
@@ -46,5 +46,42 @@
     margin-bottom: 0px;
     font-size: 17px;
     line-height: 1;
+  }
+  
+  .presentationImage {
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 991px) {
+    .presentationImage {
+      max-width: 24vw;
+    }
+
+    .sectionGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .presentationCols {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .presentationImage {
+      max-width: 40vw;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .presentationCols {
+      grid-template-columns: 1fr;
+    }
+    .presentationImage {
+      max-width: 84vw;
+    }
   }
   

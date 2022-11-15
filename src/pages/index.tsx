@@ -4,6 +4,7 @@ import AppBar from '@/components/AppBar'
 import Presentation from '@/components/Presentation'
 import styles from '@/styles/Home.module.css'
 import { PresentationContent } from '@/models/presentation'
+import HeroOverlay from '@/components/HeroOverlay'
 
 const mockPresentationContents: PresentationContent[] = [
   {
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
     <>
       <div className={cn([styles.hero, styles.intro])}>
         <AppBar />
+        <HeroOverlay />
         <div className={styles.splashWrapper}>
           <div>
             <h1 className={styles.textRotator}>The Next Archetype</h1>
