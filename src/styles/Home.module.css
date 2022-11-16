@@ -47,6 +47,15 @@
   font-weight: 700;
   line-height: 1.4;
   white-space: nowrap;
+  mix-blend-mode: hard-light;
+}
+
+.darkMode {
+  color: white;
+}
+
+.darkMode h1 {
+  mix-blend-mode: overlay;
 }
 
 .startIcon {
@@ -169,14 +178,6 @@
 .wrapper {
   width: auto;
 }
-
-/* @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-} */
-
 
 @media (max-width: 991px) {
   .section {

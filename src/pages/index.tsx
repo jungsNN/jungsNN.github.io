@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         <HeroOverlay />
         <div className={styles.splashWrapper}>
           <div>
-            <h1 className={styles.textRotator}>The Next Archetype</h1>
+            <h1 className={cn([styles.textRotator])}>The Next Archetype</h1>
             <div className={styles.startIcon}>
               <p>by Jung</p>
             </div>

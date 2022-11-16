@@ -1,37 +1,86 @@
-.overlay {
-    width: 100vh;
-    height: 100%;
+  /*  spinning cube */
+.box {
+    box-sizing: border-box;
     position: absolute;
+    top: 140px;
+    justify-self: center;
+}
+.scene {
+  width: 30vw;
+  height: 30vw;
+  perspective: 60vw;
+  margin-left: 80px;
 }
 
-.container {
-    position: relative;
-    left: 0%;
-    right: auto;
-    bottom: auto;
-    display: flex;
-    align-items: center;
+.cube {
+  width: 30vw;
+  height: 30vw;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-15vw);
 }
 
-.movingLine {
-    background: black;
-    border-left: 2px solid red;
-    border-right: 2px solid red;
-    height: 100%;
-    max-height: 80%;
-    position: absolute;
-    width: 23vw;
-    z-index: 20;
+.cube.isSpinning {
+  animation: spinCube 30s infinite ease-in-out;
 }
 
-._1 {
-    animation: slideRight_1 8s infinite alternate;
+@keyframes spinCube {
+    0% { transform: translateZ(-15vw) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-15vw) rotateX(360deg) rotateY(360deg); }
 }
 
-  @keyframes slideRight_1 {
-    0% { left: 25%;}
-    5% { left: 25%; }
-    10% { left: 25%; }
-    20% { left: 25%; }
-    100% { left: 48%; width: 40vw; }
-  }
+.cube__face {
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  max-width: 600px;
+  max-height: 600px;
+  border: 2px solid black;
+  line-height: 30vw;
+  font-size: 7vw;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face_front  { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+.cube__face_right  { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+.cube__face_back   { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+.cube__face_left   { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+.cube__face_top    { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+.cube__face_bottom { 
+    background-image: url("https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba");
+    background-size: contain;
+    filter: hue-rotate(301deg) opacity(0.5) saturate(1.5);
+}
+
+.cube__face_front  { transform: rotateY(  0deg) translateZ(11vw); }
+.cube__face_right  { transform: rotateY( 90deg) translateZ(11vw); }
+.cube__face_back   { transform: rotateY(180deg) translateZ(11vw); }
+.cube__face_left   { transform: rotateY(-90deg) translateZ(11vw); }
+.cube__face_top    { transform: rotateX( 90deg) translateZ(11vw); }
+.cube__face_bottom { transform: rotateX(-90deg) translateZ(11vw); }
+
+.cube.isBackfaceHidden .cube__face {
+  backface-visibility: hidden;
+}
