@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './index.module.css'
 
@@ -17,18 +18,13 @@ const PresentationCard: React.FunctionComponent<PresentationCardProps> = (
       className={cn([styles.presentationWrapper, styles.wInlineBlock])}
       href={`${path}/${title}`}
     >
-      <img
+      <Image
         alt={title}
         className={styles.presentationImage}
         loading="lazy"
         sizes="(max-width: 479px) 84vw, (max-width: 767px) 40vw, (max-width: 991px) 26vw, 19vw"
         src={previewImg}
       />
-      <div className="mt-5">
-        <div className={styles.withArrow}>
-          <h2 className={styles.presentationTitle}>{title}</h2>
-        </div>
-      </div>
     </Link>
   )
 }

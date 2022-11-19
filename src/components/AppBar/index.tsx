@@ -8,6 +8,12 @@ import Link from 'next/link'
 const AppBar: React.FunctionComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
+  const toggleMenuItem = () => {
+    setTimeout(() => {
+      setIsMenuOpen(false)
+    }, 100)
+  }
+
   return (
     <div className={styles.appbarWrapper}>
       <div className={styles.appbar}>
@@ -66,7 +72,7 @@ const AppBar: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <Menu isOpen={isMenuOpen} />
+      <Menu isOpen={isMenuOpen} onClose={toggleMenuItem} />
     </div>
   )
 }

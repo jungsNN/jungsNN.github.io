@@ -55,7 +55,7 @@
   }
 
   .navigationText {
-    font-size: 4vw;
+    font-size: 2.2vw;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0px;
@@ -84,9 +84,34 @@
   
   .navigationLink .navigationSubLine {
     transform: translate3d(-100%, 0px, 0px);
-    transition: transform 1s;
+    transition: transform .5s;
   }
 
   .navigationLink:hover .navigationSubLine {
     transform: translate3d(0%, 0px, 0px);
+  }
+
+
+  @media (max-width: 767px) {
+
+    .navigationContent {
+      flex-direction: column;
+    }
+
+    .navigationText {
+      font-size: 2rem;
+    }
+
+    .navigationLink {
+      padding-top: 0.1vw;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .navigationLink {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }

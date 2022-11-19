@@ -4,13 +4,23 @@ import styles from './index.module.css'
 
 interface MenuProps {
   isOpen: boolean
+  onClose: () => void
 }
 
 const Menu: React.FunctionComponent<MenuProps> = (props) => {
-  const { isOpen } = props
+  const { isOpen, onClose } = props
 
-  return isOpen ? (
-    <div className={cn([styles.menu, 'bg-background flex opacity-1'])}>
+  return (
+    <div
+      className={cn([
+        styles.menu,
+        'transition-all ease-in-out duration-500',
+        {
+          'h-0': !isOpen,
+          'h-full bg-background flex': isOpen,
+        },
+      ])}
+    >
       <div className={cn([styles.menuContainer, styles._2])}>
         <div>
           <div className={styles.navigationContent}>
@@ -24,7 +34,8 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
                   'opacity-1': isOpen,
                 },
               ])}
-              href="/about"
+              href="/"
+              onClick={onClose}
               style={{
                 transform:
                   'translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
@@ -32,7 +43,33 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
               }}
             >
               <h1 className={cn([styles.navigationText, styles._2])}>
-                About Me
+                {'Home집'}
+              </h1>
+              <div className={cn([styles.navigationLine])}>
+                <div className={cn([styles.navigationSubLine])} />
+              </div>
+            </Link>
+
+            <Link
+              className={cn([
+                styles.navigationLink,
+                styles._2,
+                styles.wInlineBlock,
+                {
+                  'opacity-0': !isOpen,
+                  'opacity-1': isOpen,
+                },
+              ])}
+              href="/about"
+              onClick={onClose}
+              style={{
+                transform:
+                  'translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+                transformStyle: 'preserve-3d',
+              }}
+            >
+              <h1 className={cn([styles.navigationText, styles._2])}>
+                {'About Me소개'}
               </h1>
               <div className={cn([styles.navigationLine])}>
                 <div className={cn([styles.navigationSubLine])} />
@@ -50,6 +87,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
                 },
               ])}
               href="/portfolio"
+              onClick={onClose}
               style={{
                 transform:
                   'translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
@@ -57,7 +95,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
               }}
             >
               <h1 className={cn([styles.navigationText, styles._2])}>
-                Portfolio
+                {'Portfolio포폴'}
               </h1>
               <div className={styles.navigationLine}>
                 <div className={styles.navigationSubLine} />
@@ -75,13 +113,16 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
                 },
               ])}
               href="/blog"
+              onClick={onClose}
               style={{
                 transform:
                   'translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
                 transformStyle: 'preserve-3d',
               }}
             >
-              <h1 className={cn([styles.navigationText, styles._2])}>Blog</h1>
+              <h1 className={cn([styles.navigationText, styles._2])}>
+                {'Blog개시물'}
+              </h1>
               <div className={styles.navigationLine}>
                 <div className={styles.navigationSubLine} />
               </div>
@@ -104,7 +145,9 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
                 transformStyle: 'preserve-3d',
               }}
             >
-              <h1 className={cn([styles.navigationText, styles._2])}>NFTs</h1>
+              <h1 className={cn([styles.navigationText, styles._2])}>
+                {'NFTs앤엪티'}
+              </h1>
               <div className={styles.navigationLine}>
                 <div className={styles.navigationSubLine} />
               </div>
@@ -113,8 +156,6 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
         </div>
       </div>
     </div>
-  ) : (
-    <></>
   )
 }
 

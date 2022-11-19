@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
 import cn from 'classnames'
-import AppBar from '@/components/AppBar'
-import Presentation from '@/components/Presentation'
-import styles from '@/styles/Home.module.css'
-import { PresentationContent } from '@/models/presentation'
 import HeroOverlay from '@/components/HeroOverlay'
+import Presentation from '@/components/Presentation'
+import { PresentationContent } from '@/models/presentation'
+import styles from '@/styles/Home.module.css'
 
 const mockPresentationContents: PresentationContent[] = [
   {
@@ -31,38 +30,26 @@ const Home: NextPage = () => {
   return (
     <>
       <div className={cn([styles.hero, styles.intro])}>
-        <AppBar />
         <HeroOverlay />
         <div className={styles.splashWrapper}>
           <div>
-            <h1 className={cn([styles.textRotator])}>The Next Archetype</h1>
-            <div className={styles.startIcon}>
-              <p>by Jung</p>
-            </div>
+            <h1 className={cn([styles.textRotator])}>
+              alpha<span className="text-2xl mr-[20px]">,</span>
+              <span className="text-2xl">spirals</span> and omega
+            </h1>
+            <p className={cn(['text-xl text-right'])}>by Jenny Jung</p>
           </div>
         </div>
       </div>
       <div className={styles.section}>
         <div className={cn([styles.grid, styles._2])}>
           <Presentation
-            contents={mockPresentationContents}
-            label="Portfolio"
+            contents={[
+              ...mockPresentationContents,
+              ...mockPresentationContents,
+            ]}
+            label="Latest"
             path="/portfolio"
-          />
-          <Presentation
-            contents={mockPresentationContents}
-            label="Blog"
-            path="/blog"
-          />
-          <Presentation
-            contents={mockPresentationContents}
-            label="About"
-            path="/about"
-          />
-          <Presentation
-            contents={mockPresentationContents}
-            label="NFTs (coming soon)"
-            path="/nfts"
           />
         </div>
       </div>

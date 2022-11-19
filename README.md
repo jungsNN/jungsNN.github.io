@@ -4,6 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [ ] Create logo
 - [ ] create a placeholder image for presentation preview cards with logo
+- [ ] add flickering background animation on load
+- [ ] adjust presentation grid layout box sizes
+- [ ] adjust max hieght for hero
 
 ## Getting Started
 

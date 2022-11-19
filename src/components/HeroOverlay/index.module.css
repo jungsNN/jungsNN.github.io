@@ -1,10 +1,14 @@
   /*  spinning cube */
+
+
 .box {
     box-sizing: border-box;
     position: absolute;
     top: 140px;
     justify-self: center;
 }
+
+
 .scene {
   width: 30vw;
   height: 30vw;
@@ -41,6 +45,7 @@
   font-weight: bold;
   color: white;
   text-align: center;
+  border: 4px ridge white;
 }
 
 .cube__face_front  { 
