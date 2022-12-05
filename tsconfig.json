@@ -18,7 +18,8 @@
       "@/models/*": ["./models/*"],
       "@/pages/*": ["./pages/*"],
       "@/styles/*": ["./styles/*"],
-      "@/utils/*": ["./utils/*"]
+      "@/utils/*": ["./utils/*"],
+      "@/views/*": ["./views/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

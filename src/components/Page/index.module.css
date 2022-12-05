@@ -1,0 +1,19 @@
+.splashWrapper {
+  position: relative;
+  left: 0%;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.textRotator {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 7vw;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  mix-blend-mode: hard-light;
+}

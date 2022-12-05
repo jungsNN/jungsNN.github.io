@@ -1,0 +1,71 @@
+@import url('../../../components/Card/index.module.css');
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.quad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 100vh;
+}
+
+.q {
+  background: #000000;
+  color: #cdcdcd;
+  cursor: pointer;
+  min-height: 100%;
+}
+.q p {
+  font-weight: 700;
+  font-size: 6vw;
+}
+.q button {
+  display: none;
+}
+.q button p {
+  color: var(--royal-blue);
+  font-size: 2vw;
+}
+.q:hover {
+  background: #393939;
+  box-shadow: 1px 1px 24px -10px #af8ed3 inset;
+  opacity: 0.95;
+  transition: all 0.4s ease;
+  color: #000000;
+}
+.q:hover button {
+  display: flex;
+}
+
+._1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+._2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+._3 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+._4 {
+  grid-column: 2;
+  grid-row: 2;
+}

@@ -1,0 +1,44 @@
+/* @import url('../../styles/shared.module.css'); */
+
+.card {
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  border-color: transparent;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card p {
+  margin: 0;
+}
+
+.half {
+  width: calc(100vw / 2);
+}
+
+.sm {
+  width: 296px;
+}
+
+.md {
+  width: 480px;
+}
+
+.lg {
+  width: calc(100vw * 0.9);
+}
+
+.screen {
+  width: 100vw;
+}

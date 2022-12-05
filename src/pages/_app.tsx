@@ -1,11 +1,11 @@
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import Image from 'next/image'
-import cn from 'classnames'
-import AppBar from '@/components/AppBar'
-import Background from '@/components/Background'
-import styles from '@/styles/Home.module.css'
-import '@/styles/globals.css'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Image from 'next/image';
+import cn from 'classnames';
+import AppBar from '@/components/AppBar';
+import Background from '@/components/Background';
+import styles from '@/styles/App.module.css';
+import '@/styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </footer>
       </main>
     </div>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
