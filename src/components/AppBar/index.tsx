@@ -1,18 +1,25 @@
-import cn from 'classnames'
-import { useState } from 'react'
-import { CloseIcon, MenuIcon } from '@/components/svgs'
-import styles from './index.module.css'
-import Menu from '../Menu'
-import Link from 'next/link'
+import cn from 'classnames';
+import { useState } from 'react';
+import { CloseIcon, MenuIcon } from '@/components/svgs';
+import styles from './index.module.css';
+import Menu from '../Menu';
+import Link from 'next/link';
 
-const AppBar: React.FunctionComponent = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+interface AppBarProps {
+  showLogo?: boolean;
+  showMenuText?: boolean;
+}
+
+const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
+  const { showLogo, showMenuText } = props;
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const iconSize = 'calc(100vw * (32 / 1440))';
 
   const toggleMenuItem = () => {
     setTimeout(() => {
-      setIsMenuOpen(false)
-    }, 100)
-  }
+      setIsMenuOpen(false);
+    }, 100);
+  };
 
   return (
     <div className={styles.appbarWrapper}>
@@ -39,7 +46,7 @@ const AppBar: React.FunctionComponent = () => {
         </div>
         <div className={styles.logoWrapper}>
           <div className={cn([styles.logo, 'max-w-full'])}>
-            <p>logo</p>
+            {showLogo ? <p>logo</p> : <></>}
           </div>
         </div>
         <div className={styles.menuButtonWrapper}>
@@ -52,29 +59,33 @@ const AppBar: React.FunctionComponent = () => {
                 <MenuIcon
                   className={cn([styles.open])}
                   color="var(--royal-blue)"
-                  height="4vw"
-                  width="4vw"
+                  height={iconSize}
+                  width={iconSize}
                 />
               )}
               {isMenuOpen && (
                 <CloseIcon
                   className={styles.remove}
                   color="var(--royal-blue)"
-                  height="4vw"
-                  width="4vw"
+                  height={iconSize}
+                  width={iconSize}
                 />
               )}
             </div>
-            <div className={cn(['display-block', styles.menuLabelWrapper])}>
-              <div className="menu-label">{isMenuOpen ? 'Close' : 'Menu'}</div>
-              <div className="menu-label">Close</div>
-            </div>
+            {showMenuText && (
+              <div className={cn(['display-block', styles.menuLabelWrapper])}>
+                <div className="menu-label">
+                  {isMenuOpen ? 'Close' : 'Menu'}
+                </div>
+                <div className="menu-label">Close</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <Menu isOpen={isMenuOpen} onClose={toggleMenuItem} />
     </div>
-  )
-}
+  );
+};
 
-export default AppBar
+export default AppBar;

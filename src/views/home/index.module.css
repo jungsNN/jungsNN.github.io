@@ -1,5 +1,32 @@
 @import url('../../styles/shared.module.css');
 
+.section {
+  position: relative;
+  /* padding: 0px 5% 100px; */
+  padding-top: calc(100vw * (128 / 1440));
+}
+
+.grid {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: calc(100vw * (120 / 1440));
+  /* flex-wrap: wrap; */
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  gap: calc(100vw * (92 / 1440));
+}
+
+.grid,
+/* ._2 {
+  max-width: 1200px;
+} */
+
 .hero {
   align-items: flex-start;
   display: flex;
@@ -129,5 +156,26 @@
   }
   .top {
     transform: rotateX(90deg) translateY(-50px) translateZ(200px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    gap: 92px;
+    margin-bottom: 120px;
+  }
+  .section {
+    padding-top: 128px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: calc(100vw * (48 / 480));
+    margin-bottom: calc(100vw * (64 / 480));
+  }
+
+  .section {
+    padding-top: calc(100vw * (64 / 480));
   }
 }

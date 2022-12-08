@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.redBg {
+  background: red;
+}
+
+.logoButton {
+  font-family: 'Sofachrome';
+  transform: rotate(270deg);
+  white-space: nowrap;
+}
+
+.logoButton h1 {
+  font-size: calc(100vw * (72 / 1440));
+  color: white;
+}
+
+.logoButton h2 {
+  font-size: calc(100vw * (48 / 1440));
+  color: red;
+}
+
+.logoButton h4 {
+  font-size: calc(100vw * (32 / 1440));
+  color: var(--text-info);
+}
+
+.logoWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}

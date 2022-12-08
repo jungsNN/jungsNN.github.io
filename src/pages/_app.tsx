@@ -4,6 +4,7 @@ import Image from 'next/image';
 import cn from 'classnames';
 import AppBar from '@/components/AppBar';
 import Background from '@/components/Background';
+import SideBar from '@/components/SideBar';
 import styles from '@/styles/App.module.css';
 import '@/styles/globals.css';
 
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main className={cn(['bg-background text-info', styles.main])}>
         <AppBar />
         <Background />
+        <SideBar isMain />
         <Component {...pageProps} />
         <footer className={styles.footer}>
           <a

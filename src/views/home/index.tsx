@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import cn from 'classnames';
-import HeroOverlay from '@/components/HeroOverlay';
-import Portal from './Portal';
+// import HeroOverlay from '@/components/HeroOverlay';
+// import Portal from './Portal';
 import Presentation from '@/components/Presentation';
 import { PresentationContent } from '@/models/presentation';
 import styles from './index.module.css';
@@ -30,17 +30,18 @@ const mockPresentationContents: PresentationContent[] = [
 const HomeView: NextPage = () => {
   return (
     <>
-      <Portal />
-      <div className={cn([styles.hero, styles.intro])}>
+      {/* <Portal /> */}
+      {/* <div className={cn([styles.hero, styles.intro])}>
         <HeroOverlay />
-      </div>
-      <div className={styles.section}>
+      </div> */}
+      <div className={cn([styles.section, 'w-full'])}>
         <div className={cn([styles.grid, styles._2])}>
           <Presentation
             contents={[
               ...mockPresentationContents,
               ...mockPresentationContents,
             ]}
+            isFloating
             label="Latest"
             path="/portfolio"
           />

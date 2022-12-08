@@ -1,6 +1,6 @@
 .appbarWrapper {
   position: fixed;
-  left: 0%;
+  left: calc(100vw * (128 / 1440));
   right: 0%;
   top: 0%;
   bottom: auto;
