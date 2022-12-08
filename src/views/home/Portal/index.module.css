@@ -29,8 +29,9 @@
   min-height: 100%;
 }
 .q p {
+  font-family: 'Sofachrome';
   font-weight: 700;
-  font-size: 6vw;
+  font-size: 4vw;
 }
 .q button {
   display: none;

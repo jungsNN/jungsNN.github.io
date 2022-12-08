@@ -1,25 +1,34 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base {
-    :root {
-        --soft-blue: #cdebeb;
-        --royal-blue: #0115a8;
-        --yellow: #fbe95e;
-    }
-    html,
-    body,
-    #__next {
-        font-family: Fahkwang, sans-serif;
-    }
+  @font-face {
+    font-family: 'Sofachrome';
+    src: url('../../public/static/fonts/sofachrome_rg_it.ttf');
+    src: url('../../public/static/fonts/sofachrome_rg_it.ttf')
+      format('truetype');
+    font-weight: 900;
+    font-style: italic;
+  }
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+  :root {
+    --soft-blue: #cdebeb;
+    --royal-blue: #0115a8;
+    --yellow: #fbe95e;
+  }
+  html,
+  body,
+  #__next {
+    font-family: Fahkwang, sans-serif;
+  }
 
-    * {
-        box-sizing: border-box;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }
