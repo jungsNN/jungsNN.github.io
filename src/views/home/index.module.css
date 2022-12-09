@@ -3,7 +3,7 @@
 .section {
   position: relative;
   /* padding: 0px 5% 100px; */
-  padding-top: calc(100vw * (128 / 1440));
+  padding-top: calc(100vw * (128 / 2560));
 }
 
 .grid {
@@ -14,12 +14,12 @@
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: calc(100vw * (120 / 1440));
+  margin-bottom: calc(100vw * (128 / 2560));
   /* flex-wrap: wrap; */
   position: relative;
   width: 100%;
   z-index: 5;
-  gap: calc(100vw * (92 / 1440));
+  gap: calc(100vw * (92 / 2560));
 }
 
 .grid,
@@ -159,10 +159,10 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 2560px) {
   .grid {
     gap: 92px;
-    margin-bottom: 120px;
+    margin-bottom: 128px;
   }
   .section {
     padding-top: 128px;

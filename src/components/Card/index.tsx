@@ -8,10 +8,12 @@ interface CardProps extends ComponentBaseProps {
   size?: 'half' | 'lg' | 'md' | 'screen' | 'sm' | undefined;
   rounded?: boolean | undefined;
   radius?: number | undefined;
+  polygon?: boolean;
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {
-  const { className, children, radius, rounded, size, ...rest } = props;
+  const { className, children, polygon, radius, rounded, size, ...rest } =
+    props;
 
   return (
     <div className={className}>
@@ -20,6 +22,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
           styles.card,
           styles[size ?? 'sm'],
           radius ? `rounded-${radius}` : rounded ? 'rounded-md' : 'rounded-0',
+          polygon && styles.polygon,
         ])}
         {...rest}
       >

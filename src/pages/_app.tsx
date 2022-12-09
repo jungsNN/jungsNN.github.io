@@ -19,8 +19,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main className={cn(['bg-background text-info', styles.main])}>
         <AppBar />
         <Background />
-        <SideBar isMain />
-        <Component {...pageProps} />
+        <div
+          className={cn(
+            'w-screen',
+            'grid gap-[calc(100vw *(168 / 2560))] grid-flow-col',
+            'justify-start'
+          )}
+        >
+          <SideBar isMain />
+          <div className={styles.page}>
+            <Component {...pageProps} />
+          </div>
+        </div>
+
         <footer className={styles.footer}>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

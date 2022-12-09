@@ -1,5 +1,6 @@
 @import url('./shared.module.css');
 
+/*  TODO: move this out of top wrapper (this controls the dimension bg */
 .main {
   display: flex;
   align-items: flex-start;

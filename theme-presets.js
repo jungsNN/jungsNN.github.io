@@ -1,27 +1,31 @@
 // Example preset
 module.exports = {
     theme: {
-      colors: {
-        'background': {
-          light: '#cdebeb',
-          DEFAULT: '#cdebeb',
-          dark: '#000000',
-        },
-        'blue': {
-          light: '#cdebeb',
-          DEFAULT: '#cdebeb',
-          dark: '#0115a8',
-        },
-        'info': {
-          light: '#0115a8',
-          DEFAULT: '#0115a8',
-          dark: '#fbe95e',
-        },
-      },
       fontFamily: {
         sans: ['Fahkwong', 'sans-serif'],
       },
       extend: {
+        colors: {
+          'soft-blue': '#cdebeb',
+          'royal-blue': '#0115a8',
+          'background': {
+            light: '#cdebeb',
+            DEFAULT: '#cdebeb',
+            dark: '#000000',
+          },
+          'blue': {
+            light: '#cdebeb',
+            DEFAULT: '#cdebeb',
+            dark: '#0115a8',
+          },
+          'info': {
+            light: '#0115a8',
+            DEFAULT: '#0115a8',
+            dark: '#fbe95e',
+          },
+          'white': '#ffffff',
+          'gray': '#cdcdcd',
+        },
         flexGrow: {
           2: '2',
           3: '3',

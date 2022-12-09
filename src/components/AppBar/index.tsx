@@ -13,7 +13,6 @@ interface AppBarProps {
 const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
   const { showLogo, showMenuText } = props;
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const iconSize = 'calc(100vw * (32 / 1440))';
 
   const toggleMenuItem = () => {
     setTimeout(() => {
@@ -54,21 +53,17 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
             className={cn(['justify-self-center', styles.hamburger])}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <div className={cn([styles.hamburgerMenu, styles._2])}>
+            <div className={cn([styles.menuIcon, styles._2])}>
               {!isMenuOpen && (
                 <MenuIcon
                   className={cn([styles.open])}
                   color="var(--royal-blue)"
-                  height={iconSize}
-                  width={iconSize}
                 />
               )}
               {isMenuOpen && (
                 <CloseIcon
                   className={styles.remove}
                   color="var(--royal-blue)"
-                  height={iconSize}
-                  width={iconSize}
                 />
               )}
             </div>

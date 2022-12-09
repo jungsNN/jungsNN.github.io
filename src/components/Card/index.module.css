@@ -1,7 +1,6 @@
 /* @import url('../../styles/shared.module.css'); */
 
 .card {
-  padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -28,17 +27,57 @@
 }
 
 .sm {
-  width: 296px;
+  width: calc(100vw * (640 / 2560));
+  height: calc(100vw * (640 / 2560));
 }
 
 .md {
-  width: 480px;
+  width: calc(100vw * (920 / 2560));
+  height: calc(100vw * (920 / 2560));
 }
 
 .lg {
-  width: calc(100vw * 0.9);
+  width: calc(100vw * ((2560 - 256) / 2560));
 }
 
 .screen {
   width: 100vw;
+}
+
+/* shape */
+.polygon {
+  --path: 0 0, calc(100% - 4em) 0, 100% 40px, 100% 100%, 0 100%;
+  cursor: pointer;
+  background: red;
+  clip-path: polygon(var(--path));
+  --webkit-mask: paint(polygon-border);
+}
+
+@media (min-width: 2560px) {
+  .sm {
+    width: 640px;
+    height: 640px;
+  }
+  .md {
+    width: 920px;
+    height: 920px;
+  }
+  .lg {
+    width: calc(2560px - 256px);
+    height: calc(2560px - 256px);
+  }
+}
+
+@media (max-width: 480px) {
+  .sm {
+    width: calc(100vw * (256 / 480));
+    height: calc(100vw * (256 / 480));
+  }
+  .md {
+    width: calc(100vw * (440 / 480));
+    height: calc(100vw * (440 / 480));
+  }
+  .lg {
+    width: 100%;
+  }
 }

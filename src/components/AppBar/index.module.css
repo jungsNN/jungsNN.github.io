@@ -1,6 +1,6 @@
 .appbarWrapper {
   position: fixed;
-  left: calc(100vw * (128 / 1440));
+  left: calc(100vw * (168 / 2560));
   right: 0%;
   top: 0%;
   bottom: auto;
@@ -84,7 +84,7 @@
   --webkit-box-ordinal-group: 2;
 }
 
-.hamburgerMenu {
+.menuIcon {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -94,12 +94,16 @@
   --webkit-box-pack: center;
 }
 
-.hamburgerMenu,
+.menuIcon svg {
+  height: calc(100vw * (64 / 2560));
+  width: calc(100vw * (64 / 2560));
+}
+
 ._2 {
   border-radius: 100%;
   flex-direction: row;
-  height: 60px;
-  width: 60px;
+  height: calc(100vw * (72 / 2560));
+  width: calc(100vw * (72 / 2560));
   --webkit-box-orient: horizontal;
   --webkit-box-direction: normal;
 }
@@ -107,7 +111,7 @@
 .open {
   position: relative;
   z-index: 2;
-  width: 40px;
+  width: calc(100vw * (72 / 2560));
 }
 
 .open svg {
@@ -118,10 +122,50 @@
 .remove {
   position: absolute;
   z-index: 2;
-  width: 20px;
+  width: calc(100vw * (40 / 2560));
 }
 
 .remove svg {
   display: inline-block;
   max-width: 100%;
+}
+
+@media (min-width: 2560px) {
+  .appbarWrapper {
+    left: 168px;
+  }
+  .menuIcon {
+    width: 64px;
+    height: 64px;
+  }
+  ._2 {
+    height: 72px;
+    width: 72px;
+  }
+  .open {
+    width: 72px;
+  }
+  .close {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appbarWrapper {
+    left: 0;
+  }
+  .menuIcon {
+    width: calc(100vw * (32 / 2560));
+    height: calc(100vw * (32 / 2560));
+  }
+  ._2 {
+    height: calc(100vw * (40 / 2560));
+    width: calc(100vw * (40 / 2560));
+  }
+  .open {
+    width: calc(100vw * (40 / 2560));
+  }
+  .close {
+    width: calc(100vw * (24 / 2560));
+  }
 }

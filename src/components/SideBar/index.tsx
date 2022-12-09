@@ -9,13 +9,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
   const isMain = props.isMain;
 
   return (
-    <div
-      className={cn([
-        'w-[calc(100vw*(128/1440))] h-full',
-        styles.container,
-        isMain && styles.redBg,
-      ])}
-    >
+    <div className={cn([styles.container, isMain && styles.redBg])}>
       <div className={cn([styles.logoButton])}>
         {isMain ? (
           <h1>Jenny Jung</h1>

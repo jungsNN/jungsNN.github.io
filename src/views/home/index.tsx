@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
 import cn from 'classnames';
-// import HeroOverlay from '@/components/HeroOverlay';
-// import Portal from './Portal';
 import Presentation from '@/components/Presentation';
 import { PresentationContent } from '@/models/presentation';
 import styles from './index.module.css';

@@ -1,3 +1,16 @@
+.page {
+  /* display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center; */
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  /* height: 100%; */
+  width: 100%;
+}
+
 .container {
   margin: 0;
   min-height: 100%;
@@ -49,14 +62,15 @@
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
-
-@media (max-width: 991px) {
-  .section {
-    padding: 80px 2%;
-  }
-
-  .grid {
-    margin-left: 3%;
-    margin-right: 3%;
+/* 
+@media (min-width: 2560px) {
+  .page {
+    width: calc(2560px - 424px);
   }
 }
+
+@media (max-width: 480px) {
+  .page {
+    width: 100vw;
+  }
+} */
