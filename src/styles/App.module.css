@@ -1,14 +1,15 @@
-@import url('./shared.module.css');
+.app {
+  display: block;
+  margin: 0;
+}
 
-/*  TODO: move this out of top wrapper (this controls the dimension bg */
-.main {
-  display: flex;
-  align-items: flex-start;
-  height: 100%;
-  min-height: 100vh;
-  flex-direction: column;
+.page {
   align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-left: 5rem;
+  position: relative;
 }
 
 .footer {

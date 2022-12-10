@@ -1,5 +1,3 @@
-/* @import url('../../styles/shared.module.css'); */
-
 .card {
   text-align: left;
   color: inherit;
@@ -50,22 +48,7 @@
   cursor: pointer;
   background: red;
   clip-path: polygon(var(--path));
-  --webkit-mask: paint(polygon-border);
-}
-
-@media (min-width: 2560px) {
-  .sm {
-    width: 640px;
-    height: 640px;
-  }
-  .md {
-    width: 920px;
-    height: 920px;
-  }
-  .lg {
-    width: calc(2560px - 256px);
-    height: calc(2560px - 256px);
-  }
+  --webkit-mask: paint(polygon);
 }
 
 @media (max-width: 480px) {

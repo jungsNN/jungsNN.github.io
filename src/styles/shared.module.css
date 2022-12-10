@@ -1,22 +1,4 @@
-.page {
-  /* display: grid;
-  grid-auto-flow: row;
-  align-items: center;
-  justify-content: center; */
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  /* height: 100%; */
-  width: 100%;
-}
-
-.container {
-  margin: 0;
-  min-height: 100%;
-}
-
-.card {
+/* .card {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -24,7 +6,6 @@
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 10px;
-  /* transition: color 0.15s ease, border-color 0.15s ease; */
   max-width: 300px;
 }
 
@@ -44,7 +25,7 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-}
+} */
 
 .logo {
   height: 1em;

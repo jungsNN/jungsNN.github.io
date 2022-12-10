@@ -1,51 +1,33 @@
 import type { NextPage } from 'next';
 import cn from 'classnames';
+import { CyberCard as FeatureCard } from '@/components/Themed';
 import Presentation from '@/components/Presentation';
-import { PresentationContent } from '@/models/presentation';
+import { mockContents } from '@/models/mocks/contents';
 import styles from './index.module.css';
 
-const mockPresentationContents: PresentationContent[] = [
-  {
-    title: 'mock content 1',
-    slug: 'mock-content-1',
-    previewImgUrl:
-      'https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba',
-  },
-  {
-    title: 'mock content 2',
-    slug: 'mock-content-2',
-    previewImgUrl:
-      'https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba',
-  },
-  {
-    title: 'mock content 3',
-    slug: 'mock-content-3',
-    previewImgUrl:
-      'https://nftstorage.link/ipfs/bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba',
-  },
-];
+const MOCK_FEATURE_CONTENT = mockContents[0];
 
 const HomeView: NextPage = () => {
+  const contents = [...mockContents, ...mockContents];
+
   return (
-    <>
-      {/* <Portal /> */}
-      {/* <div className={cn([styles.hero, styles.intro])}>
-        <HeroOverlay />
-      </div> */}
-      <div className={cn([styles.section, 'w-full'])}>
-        <div className={cn([styles.grid, styles._2])}>
-          <Presentation
-            contents={[
-              ...mockPresentationContents,
-              ...mockPresentationContents,
-            ]}
-            isFloating
-            label="Latest"
-            path="/portfolio"
-          />
-        </div>
+    <div className={cn('grid grid-flow-row w-full')}>
+      <div className={cn(styles.feature)}>
+        <div>HELLO</div>
+        <FeatureCard
+          content={MOCK_FEATURE_CONTENT}
+          key="feature-card"
+          variant="text"
+        />
       </div>
-    </>
+      <div className={cn('w-full')}>
+        <Presentation
+          contents={contents}
+          header="Portfolio"
+          path="/portfolio"
+        />
+      </div>
+    </div>
   );
 };
 

@@ -10,13 +10,15 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
 
   return (
     <div className={cn([styles.container, isMain && styles.redBg])}>
-      <div className={cn([styles.logoButton])}>
+      <div className={cn([styles.bannerWrapper])}>
         {isMain ? (
-          <h1>Jenny Jung</h1>
+          <h1 className={cn(styles.bannerTitle, styles._lg)}>Jenny Jung</h1>
         ) : (
-          <div className={styles.logoWrapper}>
-            <h2>Jenny Jung</h2>
-            <h4>Software Engineer</h4>
+          <div className={styles.bannerGrid}>
+            <h2 className={cn(styles.bannerTitle, styles._md)}>Jenny Jung</h2>
+            <h4 className={cn(styles.bannerTitle, styles._sm)}>
+              Software Engineer
+            </h4>
           </div>
         )}
       </div>

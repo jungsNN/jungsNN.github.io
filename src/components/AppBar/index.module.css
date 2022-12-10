@@ -129,7 +129,7 @@
   display: inline-block;
   max-width: 100%;
 }
-
+/* 
 @media (min-width: 2560px) {
   .appbarWrapper {
     left: 168px;
@@ -148,7 +148,7 @@
   .close {
     width: 40px;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .appbarWrapper {

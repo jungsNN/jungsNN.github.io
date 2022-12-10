@@ -1,5 +1,5 @@
-import cn from 'classnames'
-import styles from './index.module.css'
+import cn from 'classnames';
+import styles from './index.module.css';
 
 const Background: React.FunctionComponent = () => {
   return (
@@ -14,7 +14,7 @@ const Background: React.FunctionComponent = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Background
+export default Background;

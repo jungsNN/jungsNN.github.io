@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentBaseProps } from '../types';
 import styles from './index.module.css';
 
-interface CardProps extends ComponentBaseProps {
+export interface CardProps extends ComponentBaseProps {
   bg?: string | undefined;
   size?: 'half' | 'lg' | 'md' | 'screen' | 'sm' | undefined;
   rounded?: boolean | undefined;

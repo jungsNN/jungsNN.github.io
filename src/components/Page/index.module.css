@@ -1,3 +1,8 @@
+.layout {
+  padding: 5rem 0;
+  z-index: 1;
+}
+
 .splashWrapper {
   position: relative;
   left: 0%;

@@ -1,11 +1,9 @@
 .container {
+  align-items: start;
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: fixed;
   top: 0;
-  /* position: fixed;
-  left: 0;
-  bottom: 0; */
   z-index: 99;
   width: calc(100vw * (256 / 2560));
   height: 100%;
@@ -15,53 +13,57 @@
   background: red;
 }
 
-.logoButton {
-  position: sticky;
-  bottom: 40%;
+.bannerWrapper {
+  position: relative;
+}
+
+.bannerTitle {
   font-family: 'Sofachrome';
-  transform: rotate(270deg);
+  position: sticky;
+  top: 0;
+  transform: rotate(270deg) translateX(-50%);
   white-space: nowrap;
 }
 
-.logoButton h1 {
-  font-size: calc(100vw * (160 / 2560));
+._lg {
+  font-size: calc(100vw * (128 / 2560));
   color: white;
 }
 
-.logoButton h2 {
+._md {
   font-size: calc(100vw * (72 / 2560));
   color: red;
 }
 
-.logoButton h4 {
+._sm {
   font-size: calc(100vw * (48 / 2560));
   color: var(--text-info);
 }
 
-.logoWrapper {
+.bannerGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   align-items: center;
 }
-
+/* 
 @media (min-width: 2560px) {
   .container {
     width: 256px;
   }
 
-  .logoButton h1 {
+  ._lg {
     font-size: 160px;
   }
 
-  .logoButton h2 {
+  ._md {
     font-size: 72px;
   }
 
-  .logoButton h4 {
+  ._sm {
     font-size: 48px;
   }
-}
+} */
 
 @media (max-width: 480) {
   .container {
@@ -72,15 +74,15 @@
     width: 100%;
   }
 
-  .logoButton h1 {
+  ._lg {
     font-size: calc(100vw * (72 / 2560));
   }
 
-  .logoButton h2 {
+  ._md {
     font-size: calc(100vw * (64 / 2560));
   }
 
-  .logoButton h4 {
+  ._sm {
     font-size: calc(100vw * (32 / 2560));
   }
 }

@@ -20,7 +20,9 @@
   html,
   body,
   #__next {
+    background: var(--soft-blue);
     font-family: Fahkwang, sans-serif;
+    font-size: 2vw;
   }
 
   a {

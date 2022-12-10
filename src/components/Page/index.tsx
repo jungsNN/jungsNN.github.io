@@ -1,8 +1,13 @@
 import cn from 'classnames';
-import React from 'react';
+import Background from '../Background';
+import { ComponentBaseProps } from '../types';
 import styles from './index.module.css';
 
-const PageTitle = () => {
+interface PageProps extends ComponentBaseProps {
+  name: string;
+}
+
+export const PageTitle = () => {
   return (
     <div className={styles.splashWrapper}>
       <div>
@@ -16,14 +21,17 @@ const PageTitle = () => {
   );
 };
 
-const Page: React.FunctionComponent<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+const Page: React.FunctionComponent<PageProps> = (props) => {
+  const { children, name, ...rest } = props;
+  const pageName = 'Page-' + name;
+
   return (
-    <div>
-      <PageTitle />
-      {children}
-    </div>
+    <>
+      <div className={styles.layout} id={pageName} {...rest}>
+        {children}
+      </div>
+      <Background />
+    </>
   );
 };
 
