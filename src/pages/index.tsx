@@ -1,12 +1,12 @@
+import cn from 'classnames';
+import Link from 'next/link';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect } from 'react';
-import cn from 'classnames';
 import { CyberCard as FeatureCard } from '@/components/Themed';
 import { mockContents } from '@/models/mocks/contents';
 import Page from '@/components/Page';
 import styles from '@/styles/Home.module.css';
-import Link from 'next/link';
 
 const ABOUT_PATH = '/?pg=about';
 const HOME_PATH = '/';
@@ -14,23 +14,14 @@ const MOCK_FEATURE_CONTENT = mockContents[0];
 
 const Home: NextPage = () => {
   const router = useRouter();
-  // const [scrollY, setScrollY] = useState<number | undefined>();
 
   const onScroll = useCallback(() => {
     const { scrollY } = window;
-    // setScrollY(window.pageYOffset);
     const pg = router.query.pg as string;
     if (!scrollY) {
       return;
     }
-
-    // console.log("yOffset", pageYOffset, "scrollY", scrollY);
-    // console.log({ path, pg });
-
-    if (scrollY >= 255) {
-      if (pg === 'about') {
-        return;
-      }
+    if (scrollY >= 255 && pg !== 'about') {
       router.query.pg = ABOUT_PATH;
       router.push(ABOUT_PATH, undefined, { shallow: true });
     } else {
