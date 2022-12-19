@@ -1,9 +1,10 @@
 .appbarWrapper {
   position: fixed;
-  left: calc(100vw * (168 / 2560));
+  left: 0;
   right: 0%;
   top: 0%;
   bottom: auto;
+  padding-left: calc(100vw * (256 / 2560));
   z-index: 99;
 }
 

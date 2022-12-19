@@ -27,6 +27,16 @@
   line-height: 1.5;
 } */
 
+.gridRows {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.gridCols {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 .logo {
   height: 1em;
   margin-left: 0.5rem;

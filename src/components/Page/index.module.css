@@ -1,5 +1,11 @@
-.layout {
-  padding: 5rem 0;
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-left: 2.5rem;
+  position: relative;
+  width: 100%;
   z-index: 1;
 }
 

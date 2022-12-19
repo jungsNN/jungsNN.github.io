@@ -1,0 +1,8 @@
+/* Animations */
+
+/* scroll transition animation */
+.scrollup {
+  position: absolute;
+  transform: translateY(var(--parallax-offset));
+  transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
+}

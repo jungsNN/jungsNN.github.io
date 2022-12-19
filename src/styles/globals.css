@@ -16,6 +16,9 @@
     --soft-blue: #cdebeb;
     --royal-blue: #0115a8;
     --yellow: #fbe95e;
+    --parallax-offset: 30vh;
+    --content-offset: 40vh;
+    --transition-speed: 1.2s;
   }
   html,
   body,

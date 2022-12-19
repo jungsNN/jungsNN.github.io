@@ -27,7 +27,7 @@ const Page: React.FunctionComponent<PageProps> = (props) => {
 
   return (
     <>
-      <div className={styles.layout} id={pageName} {...rest}>
+      <div className={styles.page} id={pageName} {...rest}>
         {children}
       </div>
       <Background />

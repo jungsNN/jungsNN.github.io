@@ -1,4 +1,5 @@
-// Example preset
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
     theme: {
       fontFamily: {
@@ -25,6 +26,7 @@ module.exports = {
           },
           'white': '#ffffff',
           'gray': '#cdcdcd',
+          'red': '#ff0000',
         },
         flexGrow: {
           2: '2',
@@ -51,5 +53,16 @@ module.exports = {
     plugins: [
       require('@tailwindcss/typography'),
       require('@tailwindcss/aspect-ratio'),
+      plugin(function({ matchUtilities, theme }) {
+        matchUtilities(
+          {
+            'translate-z': (value) => ({
+              '--tw-translate-z': value,
+              transform: ` translate3d(var(--tw-translate-x), var(--tw-translate-y), var(--tw-translate-z)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))`
+            }),
+          },
+          { values: theme('translate'), supportsNegativeValues: true }
+        )
+      })
     ],
   }

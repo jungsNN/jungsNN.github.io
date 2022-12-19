@@ -5,3 +5,26 @@
   justify-content: center;
   align-items: start;
 }
+
+.scrollTx {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  /* transform: translateY(var(--parallax-offset)); */
+  transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+._inactive {
+  transform: translate3d(0, -7vh, 0);
+  transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+._up {
+  transform: translate3d(0, -10vh, 0);
+  transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+._down {
+  transform: translate3d(0, 20vh, 0);
+  transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
+}

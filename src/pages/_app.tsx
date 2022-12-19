@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <AppBar />
       <SideBar isMain={router.pathname === '/'} />
-      <main className={styles.page}>
+      <main className={styles.main}>
         <Component {...pageProps} />
       </main>
       <footer className={styles.footer}>
