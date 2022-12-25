@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react';
+import React, { RefObject } from 'react';
 import { ComponentBaseProps } from '../types';
 import styles from './index.module.css';
 
@@ -9,6 +9,7 @@ export interface CardProps extends ComponentBaseProps {
   rounded?: boolean | undefined;
   radius?: number | undefined;
   polygon?: boolean;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {

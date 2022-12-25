@@ -68,18 +68,23 @@
     2px 0 var(--royal-blue), 0 -1px var(--royal-blue);
 }
 
-._shadowDark {
-  color: #ffffff7d;
-  mix-blend-mode: color;
+.shadow {
   text-shadow: none;
 }
+._dark {
+  color: #ffffff7d;
+  mix-blend-mode: color;
+}
 
-._shadowLight {
+._light {
   color: darkcyan;
   mix-blend-mode: unset;
-  text-shadow: none;
-  font-size: calc(100vw * (40 / 2560));
-  margin-top: calc(100vw * (24 / 2560));
+  font-size: calc(100vw * (48 / 2560));
+  margin-top: calc(100vw * (16 / 2560));
+}
+
+._white {
+  color: white;
 }
 
 /* Grid layout */

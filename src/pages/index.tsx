@@ -71,48 +71,18 @@ const Home: NextPage = () => {
   return (
     <Page name="home">
       <div className={cn(styles.feature)} ref={initialViewRef}>
-        <div
-          className="fixed top-[100px] left-[200px] p-2 bg-[#FFFFFFD1]"
-          style={{ zIndex: 99 }}
-        >
-          <h1 className="text-[#2FF011]">{scrollingDir ?? 'stopped'}</h1>
-          <h2 className="text-[#2FF011]">{`scrollY offset: ${y} | home view bottom: ${
-            initialViewRef.current?.getBoundingClientRect().bottom
-          }`}</h2>
-          <h5 className="text-[#2FF011]">
-            {scrollingDir === 'down' && router.query.pg !== 'about'
-              ? 'down: transform: translate3d(0, 5vh, 0)'
-              : scrollingDir === 'up' && router.query.pg !== 'home'
-              ? 'up: transform: translate3d(0, -5vh, 0)'
-              : 'transform: translateY(20vh)'}
-          </h5>
-        </div>
-        <div>HELLO</div>
-        <FeatureCard
-          content={MOCK_FEATURE_CONTENT}
-          key="feature-card"
-          variant="text"
-        />
+        <div />
+        <FeatureCard content={MOCK_FEATURE_CONTENT} key="feature-card" />
       </div>
-      {/* About section */}
-      {/* <div className={cn(styles.about)}>
-          <div>ABOUT</div>
-          <FeatureCard
-            content={MOCK_FEATURE_CONTENT}
-            key="about-card"
-            variant="dots"
-          />
-        </div> */}
       <div
         className={cn(
           styles.scrollTx,
-          'bg-red',
           'bottom-0',
           {
-            'h-[25%]': router.query.pg !== 'about',
-            'h-[75%]': router.query.pg === 'about',
+            'h-[32vh]': router.query.pg !== 'about',
+            'h-[72vh]': router.query.pg === 'about',
           },
-          scrollingDir === 'down' || router.query.pg === 'about'
+          scrollingDir === 'down'
             ? styles._down
             : scrollingDir === 'up'
             ? styles._up
@@ -120,7 +90,19 @@ const Home: NextPage = () => {
         )}
         ref={aboutViewRef}
       >
-        <Link href="/?pg=2">Portfolio</Link>
+        <Link href="/?pg=2"></Link>
+        <FeatureCard
+          className={cn(
+            {
+              'h-[32vh]': router.query.pg !== 'about',
+              'h-[72vh]': router.query.pg === 'about',
+            },
+            styles._content
+          )}
+          content="Player 1"
+          header="Player 1"
+          key="about-card"
+        />
       </div>
     </Page>
   );
