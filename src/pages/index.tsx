@@ -78,15 +78,18 @@ const Home: NextPage = () => {
         className={cn(
           styles.scrollTx,
           'bottom-0',
-          {
-            'h-[32vh]': router.query.pg !== 'about',
-            'h-[72vh]': router.query.pg === 'about',
-          },
+          styles.pg,
+          // {
+          //   'h-[32vh]': router.query.pg !== 'about',
+          //   'h-[72vh]': router.query.pg === 'about',
+          // },
           scrollingDir === 'down'
             ? styles._down
             : scrollingDir === 'up'
             ? styles._up
-            : styles._inactive
+            : router.query.pg !== 'about'
+            ? styles._1
+            : styles._2
         )}
         ref={aboutViewRef}
       >
@@ -97,7 +100,7 @@ const Home: NextPage = () => {
               'h-[32vh]': router.query.pg !== 'about',
               'h-[72vh]': router.query.pg === 'about',
             },
-            styles._content
+            styles.pg
           )}
           content="Player 1"
           header="Player 1"

@@ -15,23 +15,23 @@
   transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
 }
 
-._inactive {
-  transform: translate3d(0, 12vh, 0);
+.pg {
   transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
 }
 
+._1 {
+  transform: translate3d(0, 1rem, 0);
+}
+._2 {
+  transform: translate3d(0, 8rem, 0);
+}
+
 ._up {
-  transform: translate3d(0, -5vh, 0);
+  transform: translate3d(0, -1rem, 0);
   transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
 }
 
 ._down {
-  transform: translate3d(0, 5vh, 0);
+  transform: translate3d(0, 4rem, 0);
   transition: var(--transition-speed) all cubic-bezier(0.22, 0.44, 0, 1);
-}
-
-._content {
-  transform: translate3d(0, 0vh, 0);
-  transition: calc(var(--transition-speed) * 2) all
-    cubic-bezier(0.22, 0.44, 0, 1);
 }
