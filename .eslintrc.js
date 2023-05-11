@@ -6,6 +6,8 @@ module.exports = {
     node: true,
   },
   extends: [
+    'next',
+    'next/core-web-vitals',
     'prettier',
     'eslint:recommended',
     'plugin:react/recommended',
@@ -27,6 +29,9 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
       },
       typescript: {},
+    },
+    react: {
+      version: 'detect',
     },
   },
 };
