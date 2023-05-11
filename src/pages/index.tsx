@@ -177,7 +177,7 @@ const Home: NextPage = () => {
                 id={group.label}
                 key={`group-${group.id}_keyword-${keyword.id}`}
                 className={cn('mr-[var(--s-xs)]', 'inline-block', {
-                  'text-[var(--base-body-inverted)]':
+                  'text-[var(--accent)]':
                     group.id > 1 ? group.id % 2 !== 0 : group.id === 1,
                 })}
               >

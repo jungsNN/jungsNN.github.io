@@ -5,69 +5,7 @@
   position: absolute;
   top: 3rem;
   justify-self: center;
-  background: var(--bg-color);
 }
-/* 
-.rect3dContainer {
-  width: 400px;
-  height: 200px;
-  perspective: 500px;
-}
-
-.rect3d {
-  width: 400px;
-  height: 200px;
-  position: relative;
-  transform: translateZ(50px);
-  transform-style: preserve-3d;
-}
-
-.dimension {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: repeating-linear-gradient(
-      0deg,
-      rgb(205, 235, 235) 0px,
-      rgb(205, 235, 235) 1px,
-      transparent 1px,
-      transparent 40px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgb(205, 235, 235) 0px,
-      rgb(205, 235, 235) 1px,
-      transparent 1px,
-      transparent 40px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-}
-
-.bottom {
-  width: 400px;
-  height: 800px;
-}
-
-.top {
-  width: 400px;
-  height: 400px;
-}
-
-.back {
-  transform: rotateY(-180deg) translateZ(250px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateY(-200px) translateZ(-200px);
-}
-.left {
-  transform: rotateY(-90deg) translateX(-50px) translateZ(200px);
-}
-.right {
-  transform: rotateY(90deg) translateX(50px) translateZ(200px);
-}
-.top {
-  transform: rotateX(90deg) translateY(-50px) translateZ(200px);
-} */
 
 .rect3dContainer {
   width: 400px;
@@ -89,15 +27,15 @@
   height: 100%;
   background-image: repeating-linear-gradient(
       0deg,
-      rgb(205, 235, 235) 0px,
-      rgb(205, 235, 235) 1px,
+      rgb(224, 255, 255, 0.45) 0px,
+      rgb(224, 255, 255, 0.45) 1px,
       transparent 1px,
       transparent 40px
     ),
     repeating-linear-gradient(
       90deg,
-      rgb(205, 235, 235) 0px,
-      rgb(205, 235, 235) 1px,
+      rgb(224, 255, 255, 0.45) 0px,
+      rgb(224, 255, 255, 0.45) 1px,
       transparent 1px,
       transparent 40px
     ),
@@ -130,7 +68,7 @@
   transform: rotateX(90deg) translateY(42px) translateZ(200px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .dimensionBg {
     top: 5rem;
   }
@@ -139,29 +77,28 @@
     width: 800px;
     height: 400px;
     perspective: 1000px;
-    /* perspective: 500px; */
   }
 
   .rect3d {
     width: 801px;
-    height: 400px;
-    transform: translateZ(150px);
-    /* transform: translateZ(324px); */
+    height: 401px;
+    /* transform: translateZ(445px); */
+    transform: translateZ(167px);
   }
 
   .dimension {
     background-image: repeating-linear-gradient(
         0deg,
-        rgb(205, 235, 235) 0px,
-        rgb(205, 235, 235) 1px,
-        transparent 2px,
+        rgb(224, 255, 255, 0.65) 0px,
+        rgb(224, 255, 255, 0.65) 1px,
+        transparent 1px,
         transparent 80px
       ),
       repeating-linear-gradient(
         90deg,
-        rgb(205, 235, 235) 0px,
-        rgb(205, 235, 235) 1px,
-        transparent 2px,
+        rgb(224, 255, 255, 0.65) 0px,
+        rgb(224, 255, 255, 0.65) 1px,
+        transparent 1px,
         transparent 80px
       ),
       linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
@@ -176,25 +113,19 @@
     width: 800px;
     height: 800px;
   }
-
   .back {
-    /* transform: rotateY(-180deg) translateZ(500px); */
-    transform: rotateY(-180deg) translateZ(343px);
+    transform: rotateY(-180deg) translateZ(500px);
   }
   .bottom {
-    transform: rotateX(-90deg) translateY(-456px) translateZ(-400px);
-    /* transform: rotateX(-90deg) translateY(-400px) translateZ(-400px); */
+    transform: rotateX(-90deg) translateY(-300px) translateZ(-400px);
   }
   .left {
-    /* transform: rotateY(-90deg) translateX(-100px) translateZ(400px); */
-    transform: rotateY(-90deg) translateX(56px) translateZ(400px);
+    transform: rotateY(-90deg) translateX(-100px) translateZ(400px);
   }
   .right {
-    /* transform: rotateY(90deg) translateX(100px) translateZ(400px); */
-    transform: rotateY(90deg) translateX(-56px) translateZ(400px);
+    transform: rotateY(90deg) translateX(100px) translateZ(400px);
   }
   .top {
-    /* transform: rotateX(90deg) translateY(-100px) translateZ(400px); */
-    transform: rotateX(90deg) translateY(56px) translateZ(400px);
+    transform: rotateX(90deg) translateY(-100px) translateZ(400px);
   }
 }

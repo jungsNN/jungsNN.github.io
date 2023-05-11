@@ -30,7 +30,7 @@ const Slide: React.FC<Props> = (props) => {
               // 'backdrop-invert-0',
               'md:break-all',
               'font-[800]',
-              'text-xl md:text-5xl lg:text-7xl text-[var(--base-body)] active:text-[var(--accent)] hover:text-[var(--accent)]',
+              'text-xl md:text-5xl lg:text-7xl text-[var(--orange)] active:text-[var(--accent)] hover:text-[var(--accent)]',
               'transform-all duration-75 ease-in-out',
               'translate-x-[calc(100vw-var(--s-xl))] sm:translate-x-[calc(100vw/2.5)]',
               'uppercase',

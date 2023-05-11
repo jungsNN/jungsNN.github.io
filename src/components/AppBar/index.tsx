@@ -106,7 +106,7 @@ const AppbarLink = ({ label, url }: { label: string; url: string }) => {
       <span className="text-[var(--accent)]">{'//'}</span>
       <span
         className={cn(
-          'text-[var(--base-body)] hover:text-[var(--accent)] active:text-[var(--accent)] font-[800]',
+          'text-[var(--orange)] hover:text-[var(--accent)] active:text-[var(--accent)] font-[800]',
           'transform-all duration-75 ease-in-out'
         )}
       >
