@@ -1,12 +1,12 @@
 interface CloseIconProps {
-  className?: string
-  color?: string
-  width?: string
-  height?: string
+  className?: string;
+  color?: string;
+  width?: string;
+  height?: string;
 }
 
 const CloseIcon: React.FunctionComponent<CloseIconProps> = (props) => {
-  const { color, ...rest } = props
+  const { color, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -28,7 +28,7 @@ const CloseIcon: React.FunctionComponent<CloseIconProps> = (props) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default CloseIcon
+export default CloseIcon;

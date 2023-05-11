@@ -1,14 +1,14 @@
-import cn from 'classnames'
-import Link from 'next/link'
-import styles from './index.module.css'
+import cn from 'classnames';
+import Link from 'next/link';
+import styles from './index.module.css';
 
 interface MenuProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 const Menu: React.FunctionComponent<MenuProps> = (props) => {
-  const { isOpen, onClose } = props
+  const { isOpen, onClose } = props;
 
   return (
     <div
@@ -156,7 +156,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

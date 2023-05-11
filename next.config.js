@@ -4,6 +4,6 @@ const nextConfig = {
   images: {
     domains: ['nftstorage.link'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

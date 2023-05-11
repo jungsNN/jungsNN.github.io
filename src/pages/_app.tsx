@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <div className={cn(theme.theme,styles.app)}>
+    <div className={cn(theme.theme, styles.app)}>
       <Head>
         <title>Jenny Jung</title>
         <meta content="portfolio" name="description" />
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <AppBar />
       <SideBar isMain={router.pathname === '/'} />
-      <main className={cn('bg-[var(--bg-color)]', styles.main,)}>
+      <main className={cn('bg-[var(--bg-color)]', styles.main)}>
         <Component {...pageProps} />
       </main>
     </div>

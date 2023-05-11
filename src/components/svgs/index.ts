@@ -1,5 +1,5 @@
-import CloseIcon from './CloseIcon'
-import MenuIcon from './MenuIcon'
+import CloseIcon from './CloseIcon';
+import MenuIcon from './MenuIcon';
 
-export { CloseIcon }
-export { MenuIcon }
+export { CloseIcon };
+export { MenuIcon };
