@@ -1,5 +1,8 @@
 build
 dist
+.next
+.vscode
+.husky
 package.json
 *.log
 next-env.d.ts
@@ -7,3 +10,5 @@ node_modules
 yarn.lock
 package-lock.json
 public
+theme-presets.js
+*.config.js

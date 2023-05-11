@@ -1,5 +1,8 @@
 build
 dist
+.next
+.vscode
+.husky
 package.json
 *.log
 next-env.d.ts
