@@ -16,7 +16,6 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "outDir": "./dist",
     "paths": {
       "@/components/*": ["./components/*"],
       "@/models/*": ["./models/*"],
