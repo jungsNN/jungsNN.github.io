@@ -9,14 +9,31 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
   const isMain = props.isMain;
 
   return (
-    <div className={cn([styles.container, isMain && styles.redBg])}>
-      <div className={cn([styles.bannerWrapper])}>
+    <div className={cn(
+      'flex',
+      'fixed top-0',
+      'h-[calc(100vw*(128*2560))] sm:h-[100%]',
+      'items-start justify-center',
+      'w-[100%] sm:w-[calc(100vw*(256/2560))]',
+      'z-80',
+    )}>
+      <div className={cn('relative')}>
         {isMain ? (
-          <h1 className={cn(styles.bannerTitle, styles._lg)}>Jenny Jung</h1>
+          <h1 className={cn(styles.bannerTitle, 
+            'text-[var(--base-body)]',
+            'text-[calc(100vw*(72/2560))] sm:text-[calc(100vw*(128/2560))]',
+            )}>Jenny Jung</h1>
         ) : (
-          <div className={styles.bannerGrid}>
-            <h2 className={cn(styles.bannerTitle, styles._md)}>Jenny Jung</h2>
-            <h4 className={cn(styles.bannerTitle, styles._sm)}>
+          <div className={cn(
+            'grid grid-cols-[repeat(2,1fr)]',
+            'items-center justify-between'
+          )}>
+            <h2 className={cn(styles.bannerTitle, 
+            'text-[var(--secondary)]',
+            'text-[calc(100vw*(64/2560))] sm:text-[calc(100vw*(72/2560))]',
+              )}>Jenny Jung</h2>
+            <h4 className={cn(styles.bannerTitle, 'text-[var(--base-body)]',
+            'text-[calc(100vw*(32/2560))] sm:text-[calc(100vw*(48/2560))]',)}>
               Software Engineer
             </h4>
           </div>

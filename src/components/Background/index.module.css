@@ -1,23 +1,25 @@
 /* 3D Demensional cube background */
+
 .dimensionBg {
   box-sizing: border-box;
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   justify-self: center;
+  background: var(--bg-color);
 }
 
 .rect3dContainer {
-  width: 800px;
-  height: 400px;
-  perspective: 1000px;
+  width: 400px;
+  height: 200px;
+  perspective: 500px;
 }
 
 .rect3d {
-  width: 800px;
-  height: 400px;
+  width: 400px;
+  height: 200px;
   position: relative;
+  transform: translateZ(50px);
   transform-style: preserve-3d;
-  transform: translateZ(150px);
 }
 
 .dimension {
@@ -26,104 +28,112 @@
   height: 100%;
   background-image: repeating-linear-gradient(
       0deg,
-      rgb(255, 255, 255) 0px,
-      rgb(255, 255, 255) 1px,
+      rgb(205, 235, 235) 0px,
+      rgb(205, 235, 235) 1px,
       transparent 1px,
-      transparent 80px
+      transparent 40px
     ),
     repeating-linear-gradient(
       90deg,
-      rgb(255, 255, 255) 0px,
-      rgb(255, 255, 255) 1px,
+      rgb(205, 235, 235) 0px,
+      rgb(205, 235, 235) 1px,
       transparent 1px,
-      transparent 80px
+      transparent 40px
     ),
     linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 
 .bottom {
-  width: 800px;
-  height: 1600px;
-}
-
-.top {
-  width: 800px;
+  width: 400px;
   height: 800px;
 }
 
-.back {
-  transform: rotateY(-180deg) translateZ(500px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateY(-400px) translateZ(-400px);
-}
-.left {
-  transform: rotateY(-90deg) translateX(-100px) translateZ(400px);
-}
-.right {
-  transform: rotateY(90deg) translateX(100px) translateZ(400px);
-}
 .top {
-  transform: rotateX(90deg) translateY(-100px) translateZ(400px);
+  width: 400px;
+  height: 400px;
 }
 
-@media (max-width: 767px) {
+.back {
+  transform: rotateY(-180deg) translateZ(250px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateY(-200px) translateZ(-200px);
+}
+.left {
+  transform: rotateY(-90deg) translateX(-50px) translateZ(200px);
+}
+.right {
+  transform: rotateY(90deg) translateX(50px) translateZ(200px);
+}
+.top {
+  transform: rotateX(90deg) translateY(-50px) translateZ(200px);
+}
+
+@media (min-width: 768px) {
   .dimensionBg {
-    top: 3rem;
+    top: 5rem;
   }
+
   .rect3dContainer {
-    width: 400px;
-    height: 200px;
-    perspective: 500px;
+    width: 800px;
+    height: 400px;
+    perspective: 1000px;
+    /* perspective: 500px; */
   }
 
   .rect3d {
-    width: 400px;
-    height: 200px;
-    transform: translateZ(50px);
+    width: 801px;
+    height: 400px;
+    transform: translateZ(150px);
+    /* transform: translateZ(324px); */
   }
 
   .dimension {
     background-image: repeating-linear-gradient(
         0deg,
-        rgb(255, 255, 255) 0px,
-        rgb(255, 255, 255) 1px,
-        transparent 1px,
-        transparent 40px
+        rgb(205, 235, 235) 0px,
+        rgb(205, 235, 235) 1px,
+        transparent 2px,
+        transparent 80px
       ),
       repeating-linear-gradient(
         90deg,
-        rgb(255, 255, 255) 0px,
-        rgb(255, 255, 255) 1px,
-        transparent 1px,
-        transparent 40px
+        rgb(205, 235, 235) 0px,
+        rgb(205, 235, 235) 1px,
+        transparent 2px,
+        transparent 80px
       ),
       linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   }
 
   .bottom {
-    width: 400px;
+    width: 800px;
+    height: 1600px;
+  }
+
+  .top {
+    width: 800px;
     height: 800px;
   }
 
-  .top {
-    width: 400px;
-    height: 400px;
-  }
-
   .back {
-    transform: rotateY(-180deg) translateZ(250px);
+    /* transform: rotateY(-180deg) translateZ(500px); */
+    transform: rotateY(-180deg) translateZ(343px);
   }
   .bottom {
-    transform: rotateX(-90deg) translateY(-200px) translateZ(-200px);
+    transform: rotateX(-90deg) translateY(-456px) translateZ(-400px);
+    /* transform: rotateX(-90deg) translateY(-400px) translateZ(-400px); */
   }
   .left {
-    transform: rotateY(-90deg) translateX(-50px) translateZ(200px);
+    /* transform: rotateY(-90deg) translateX(-100px) translateZ(400px); */
+    transform: rotateY(-90deg) translateX(56px) translateZ(400px);
   }
   .right {
-    transform: rotateY(90deg) translateX(50px) translateZ(200px);
+    /* transform: rotateY(90deg) translateX(100px) translateZ(400px); */
+    transform: rotateY(90deg) translateX(-56px) translateZ(400px);
   }
   .top {
-    transform: rotateX(90deg) translateY(-50px) translateZ(200px);
+    /* transform: rotateX(90deg) translateY(-100px) translateZ(400px); */
+    transform: rotateX(90deg) translateY(56px) translateZ(400px);
   }
 }

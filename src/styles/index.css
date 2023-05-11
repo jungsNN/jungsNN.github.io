@@ -1,3 +1,4 @@
 @import url('./globals.css');
 @import url('./layouts.css');
 @import url('./shared.module.css');
+@import url('./theme.module.css');

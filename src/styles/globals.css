@@ -13,9 +13,9 @@
   }
 
   :root {
-    --soft-blue: #cdebeb;
+    /* --soft-blue: #cdebeb;
     --royal-blue: #0115a8;
-    --yellow: #fbe95e;
+    --yellow: #fbe95e; */
     --parallax-offset: 30vh;
     --content-offset: 40vh;
     --transition-speed: 2s;
@@ -23,9 +23,9 @@
   html,
   body,
   #__next {
-    background: var(--soft-blue);
     font-family: Fahkwang, sans-serif;
     font-size: 2vw;
+    overflow-y: hidden;
   }
 
   a {
@@ -35,5 +35,6 @@
 
   * {
     box-sizing: border-box;
+    overscroll-behavior-y: contain;
   }
 }

@@ -4,6 +4,7 @@ export interface Content {
   previewImgUrl: string;
   slug: string;
   title: string;
+  metadata?: { [key: string]: string };
 }
 
 export function instanceOfContent(

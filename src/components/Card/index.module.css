@@ -24,20 +24,6 @@
   width: calc(100vw / 2);
 }
 
-.sm {
-  width: calc(100vw * (640 / 2560));
-  height: calc(100vw * (640 / 2560));
-}
-
-.md {
-  width: calc(100vw * (920 / 2560));
-  height: calc(100vw * (920 / 2560));
-}
-
-.lg {
-  width: calc(100vw * ((2560 - 256) / 2560));
-}
-
 .screen {
   width: 100vw;
 }
@@ -51,16 +37,30 @@
   --webkit-mask: paint(polygon);
 }
 
-@media (max-width: 480px) {
+.sm {
+  width: calc(100vw * (256 / 480));
+  height: calc(100vw * (256 / 480));
+}
+.md {
+  width: calc(100vw * (440 / 480));
+  height: calc(100vw * (440 / 480));
+}
+.lg {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
   .sm {
-    width: calc(100vw * (256 / 480));
-    height: calc(100vw * (256 / 480));
+    width: calc(100vw * (640 / 2560));
+    height: calc(100vw * (640 / 2560));
   }
+
   .md {
-    width: calc(100vw * (440 / 480));
-    height: calc(100vw * (440 / 480));
+    width: calc(100vw * (920 / 2560));
+    height: calc(100vw * (920 / 2560));
   }
+
   .lg {
-    width: 100%;
+    width: calc(100vw * ((2560 - 256) / 2560));
   }
 }

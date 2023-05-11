@@ -1,0 +1,14 @@
+.theme {
+  --base-100: #dec9eb;
+  --base-body: #000000;
+
+  --primary: #9255de;
+  --secondary: #cdebeb;
+  --accent: #0115a8;
+
+  --bg-color: var(--base-100);
+  --surface-base: var(--primary);
+
+  --border-color: var(--base-body);
+  --line-color: var(--secondary);
+}
