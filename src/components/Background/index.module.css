@@ -7,7 +7,7 @@
   justify-self: center;
   background: var(--bg-color);
 }
-
+/* 
 .rect3dContainer {
   width: 400px;
   height: 200px;
@@ -67,6 +67,67 @@
 }
 .top {
   transform: rotateX(90deg) translateY(-50px) translateZ(200px);
+} */
+
+.rect3dContainer {
+  width: 400px;
+  height: 200px;
+  perspective: 500px;
+}
+
+.rect3d {
+  width: 401px;
+  height: 201px;
+  position: relative;
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
+}
+
+.dimension {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgb(205, 235, 235) 0px,
+      rgb(205, 235, 235) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(205, 235, 235) 0px,
+      rgb(205, 235, 235) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+.bottom {
+  width: 400px;
+  height: 800px;
+}
+
+.top {
+  width: 400px;
+  height: 400px;
+}
+
+.back {
+  transform: rotateY(-180deg) translateZ(150px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateY(-248px) translateZ(-200px);
+}
+.left {
+  transform: rotateY(-90deg) translateX(45px) translateZ(200px);
+}
+.right {
+  transform: rotateY(90deg) translateX(-46px) translateZ(200px);
+}
+.top {
+  transform: rotateX(90deg) translateY(42px) translateZ(200px);
 }
 
 @media (min-width: 768px) {

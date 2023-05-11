@@ -16,7 +16,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
         'h-[calc(100vw*(128*2560))] sm:h-[100%]',
         'items-start justify-center',
         'w-[calc(100vw*(256/2560))]',
-        'z-80'
+        'z-20'
       )}
     >
       <div className={cn('relative')}>
@@ -24,7 +24,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
           <h1
             className={cn(
               styles.bannerTitle,
-              'text-[var(--base-body)]',
+              'text-[var(--base-body-inverted)]',
               'text-[calc(100vw*(128/2560))]'
             )}
           >

@@ -5,6 +5,8 @@ import styles from './index.module.css';
 import Menu from '../Menu';
 import Link from 'next/link';
 
+const SITE_URL = process.env.SITE_URL;
+
 interface AppBarProps {
   showLogo?: boolean;
   showMenuText?: boolean;
@@ -33,7 +35,7 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
           'relative',
           'flex flex-row',
           'items-center justify-between',
-          'sm:min-h-[var(--s-max)]',
+          'sm:min-h-[var(--s)]',
           'm-x-auto',
           'p-[var(--s-xs)_5%] sm:p-[var(--s-sm)_5%]',
           'space-[var(--s-md)]',
@@ -41,36 +43,10 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
         )}
       >
         <div className="text-lg sm:text-base">
-          <Link
-            className={cn(
-              'text-[var(--base-body)] hover:text-[var(--primary)] font-[700]',
-              'inline-block',
-              'mr-[var(--s)]'
-            )}
-            href="https://github.com/jungsNN"
-          >
-            Gh.
-          </Link>
-          <Link
-            className={cn(
-              'text-[var(--base-body)] font-[700]',
-              'inline-block',
-              'mr-[var(--s)]'
-            )}
-            href="https://linkedin.com/in/jungsnn"
-          >
-            <div>Li.</div>
-          </Link>
-          <Link
-            className={cn(
-              'text-[var(--base-body)] font-[700]',
-              'inline-block',
-              'mr-[var(--s)]'
-            )}
-            href="https://twitter.com/jungsnn"
-          >
-            <div>Tw.</div>
-          </Link>
+          <AppbarLink label="CV" url={`${SITE_URL}/cv`} />
+          <AppbarLink label="Gh." url="https://github.com/jungsNN" />
+          <AppbarLink label="Li." url="https://linkedin.com/in/jungsNN" />
+          <AppbarLink label="Tw." url="https://twitter.com/jungsNN" />
         </div>
         <div className={styles.logoWrapper}>
           <div className={cn([styles.logo, 'max-w-full'])}>
@@ -120,4 +96,23 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
   );
 };
 
+const AppbarLink = ({ label, url }: { label: string; url: string }) => {
+  return (
+    <Link
+      className={cn('inline-block', 'mr-[var(--s-sm)] md:mr-[var(--s)]')}
+      href={url}
+      target="_blank"
+    >
+      <span className="text-[var(--accent)]">{'//'}</span>
+      <span
+        className={cn(
+          'text-[var(--base-body)] hover:text-[var(--accent)] active:text-[var(--accent)] font-[800]',
+          'transform-all duration-75 ease-in-out'
+        )}
+      >
+        {label}
+      </span>
+    </Link>
+  );
+};
 export default AppBar;

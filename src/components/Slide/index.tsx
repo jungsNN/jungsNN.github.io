@@ -11,24 +11,32 @@ const Slide: React.FC<Props> = (props) => {
   const items = props.contents;
 
   return (
-    <div className={cn('items-end justify-between', 'flex flex-col h-full')}>
+    <div
+      className={cn(
+        'items-end justify-between',
+        'flex flex-col h-full space-y-[var(--s-md)]'
+      )}
+    >
       {items.map((content) => (
         <div
           key={`${content.slug}`}
-          className={cn('flex flex-row items-end justify-end')}
+          className={cn('flex flex-row items-end justify-end w-full')}
         >
           <Link
             href={JSON.parse(JSON.stringify(content.metadata)).url}
             target="_blank"
             className={cn(
-              'backdrop-brightness-[0.5] md:backdrop-filter-none',
-              'font-[700]',
-              'mb-[var(--s)]',
-              'text-xl md:text-3xl lg:text-4xl text-[var(--secondary)] active:text-[var(--primary)] hover:text-[var(--primary)]',
+              'backdrop-contrast-75',
+              // 'backdrop-invert-0',
+              'md:break-all',
+              'font-[800]',
+              'text-xl md:text-5xl lg:text-7xl text-[var(--base-body)] active:text-[var(--accent)] hover:text-[var(--accent)]',
               'transform-all duration-75 ease-in-out',
-              'translate-x-[calc(100vw-var(--s-xl))] sm:translate-x-[calc(100vw/2.5)] md:translate-x-0',
+              'translate-x-[calc(100vw-var(--s-xl))] sm:translate-x-[calc(100vw/2.5)]',
               'uppercase',
-              'z-40'
+              'z-40',
+              'italic',
+              'max-w-[calc(100vw-var(--s-xl))] sm:max-w-[calc(100vw/2.5)]'
             )}
           >
             {`${content.title}(${

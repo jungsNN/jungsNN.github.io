@@ -1,10 +1,15 @@
 .theme {
+  --blue: #0000ff;
+  --green: #70ff00;
+  --orange: #d2691e;
+
   --base-100: #dec9eb;
   --base-body: #000000;
+  --base-body-inverted: #e0ffff;
 
   --primary: #9255de;
   --secondary: #cdebeb;
-  --accent: #0115a8;
+  --accent: #20b2aa;
 
   --bg-color: var(--base-100);
   --surface-base: var(--primary);
