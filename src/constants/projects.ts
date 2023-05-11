@@ -50,6 +50,14 @@ const projectData = [
     title: 'Funky Flowerz',
     year: '2023',
   },
+  {
+    id: 6,
+    cid: 'bafybeic656lwz3rx7jopycrnpio4u7hvphdy75q57zar4gs7i3avszgiky',
+    url: 'https://wework.com',
+    size: { width: '800', height: '800' },
+    title: 'WeWork.com',
+    year: '2023',
+  },
 ];
 
 export const projectContents: Content[] = projectData.map((data) => ({
@@ -57,6 +65,11 @@ export const projectContents: Content[] = projectData.map((data) => ({
   slug: `project-content-${data.id}`,
   title: data.title,
   metadata: JSON.parse(
-    JSON.stringify({ year: data.year, id: data.id, size: data.size })
+    JSON.stringify({
+      year: data.year,
+      id: data.id,
+      size: data.size,
+      url: data.url,
+    })
   ),
 }));

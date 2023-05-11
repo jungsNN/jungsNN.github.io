@@ -1,42 +1,3 @@
-.appbarWrapper {
-  position: fixed;
-  left: 0;
-  right: 0%;
-  top: 0%;
-  bottom: auto;
-  padding-left: calc(100vw * (256 / 2560));
-  z-index: 99;
-}
-
-.appbar {
-  align-items: center;
-  position: relative;
-  display: grid;
-  flex-direction: row;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  justify-content: space-between;
-  min-height: 80px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 15px 5%;
-  z-index: 20;
-}
-
-.socialLink {
-  margin-right: 15px;
-  color: var(--base-body);
-  font-weight: 700;
-}
-
-.wInlineBlock {
-  max-width: 15px;
-  display: inline-block;
-}
-
 .logoWrapper {
   grid-column-start: span 1;
   grid-column-end: span 1;
@@ -52,12 +13,6 @@
 }
 
 .menuButtonWrapper {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  height: 70px;
-  order: 1;
   --webkit-box-direction: normal;
   --webkit-box-ordinal-group: 2;
   --webkit-box-orient: horizontal;

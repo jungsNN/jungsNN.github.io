@@ -1,0 +1,41 @@
+.mobile {
+  /* Spacing */
+  --s: 1rem; /* Default 4 */
+  --s-xxs: 0.1rem; /* min */
+  --s-xs: 0.25rem; /* 1 */
+  --s-sm: 0.5rem; /* 2 */
+  --s-md: 2rem; /* 8 */
+  --s-lg: 4rem; /* 16 */
+  --s-xl: 6rem; /* 24 */
+  --s-xxl: 8rem; /* 32 */
+  --s-max: 12rem; /* max 48 */
+
+  /* Text */
+  --font-body: 0.8rem;
+  --subtitle-size: 0.75rem;
+  --title-size: 1.25rem;
+
+  /* Page */
+  --page-maxw: 100%;
+}
+
+.desktop {
+  /* Spacing */
+  --s: 2rem; /* Default 8 */
+  --s-xxs: 0.25rem; /* min */
+  --s-xs: 0.5rem; /* 1 */
+  --s-sm: 1rem; /* 4 */
+  --s-md: 4rem; /* 16 */
+  --s-lg: 6rem; /* 24 */
+  --s-xl: 8rem; /* 32 */
+  --s-xxl: 12rem; /*  48 */
+  --s-max: 16rem; /* max 64 */
+
+  /* Text */
+  --font-body: 1rem;
+  --subtitle-size: 0.8rem;
+  --title-size: 1.5rem;
+
+  /* Page */
+  --page-maxw: 1440px;
+}

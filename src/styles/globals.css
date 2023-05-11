@@ -19,12 +19,13 @@
     --parallax-offset: 30vh;
     --content-offset: 40vh;
     --transition-speed: 2s;
+    --s-256: calc(100vw * (256 / 2560));
   }
   html,
   body,
   #__next {
     font-family: Fahkwang, sans-serif;
-    font-size: 2vw;
+    font-size: 1rem;
     overflow-y: hidden;
   }
 

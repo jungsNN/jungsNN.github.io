@@ -15,7 +15,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
         'fixed top-0',
         'h-[calc(100vw*(128*2560))] sm:h-[100%]',
         'items-start justify-center',
-        'w-[100%] sm:w-[calc(100vw*(256/2560))]',
+        'w-[calc(100vw*(256/2560))]',
         'z-80'
       )}
     >
@@ -25,7 +25,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
             className={cn(
               styles.bannerTitle,
               'text-[var(--base-body)]',
-              'text-[calc(100vw*(72/2560))] sm:text-[calc(100vw*(128/2560))]'
+              'text-[calc(100vw*(128/2560))]'
             )}
           >
             Jenny Jung

@@ -21,25 +21,6 @@
   align-items: center;
 }
 
-/* @media (max-width: 480px) {
-  .container {
-    height: calc(100vw * (128 / 2560));
-    width: 100%;
-  }
-
-  ._lg {
-    font-size: calc(100vw * (72 / 2560));
-  }
-
-  ._md {
-    font-size: calc(100vw * (64 / 2560));
-  }
-
-  ._sm {
-    font-size: calc(100vw * (32 / 2560));
-  }
-} */
-
 .container {
   align-items: flex-start;
   display: flex;
@@ -47,9 +28,6 @@
   position: fixed;
   top: 0;
   z-index: 99;
-  /* left: 0;
-  right: 0;
-  top: 0; */
   height: calc(100vw * (128 / 2560));
   width: 100%;
 }

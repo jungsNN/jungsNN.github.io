@@ -21,23 +21,52 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
   };
 
   return (
-    <div className={styles.appbarWrapper}>
-      <div className={styles.appbar}>
-        <div className="social-wrapper">
+    <div
+      className={cn(
+        'fixed bottom-auto left-0 right-0 top-0',
+        'pl-[var(--s-256)]',
+        'z-80'
+      )}
+    >
+      <div
+        className={cn(
+          'relative',
+          'flex flex-row',
+          'items-center justify-between',
+          'sm:min-h-[var(--s-max)]',
+          'm-x-auto',
+          'p-[var(--s-xs)_5%] sm:p-[var(--s-sm)_5%]',
+          'space-[var(--s-md)]',
+          'z-20'
+        )}
+      >
+        <div className="text-lg sm:text-base">
           <Link
-            className={cn([styles.socialLink, styles.wInlineBlock])}
+            className={cn(
+              'text-[var(--base-body)] hover:text-[var(--primary)] font-[700]',
+              'inline-block',
+              'mr-[var(--s)]'
+            )}
             href="https://github.com/jungsNN"
           >
-            <div>Gh.</div>
+            Gh.
           </Link>
           <Link
-            className={cn([styles.socialLink, styles.wInlineBlock])}
+            className={cn(
+              'text-[var(--base-body)] font-[700]',
+              'inline-block',
+              'mr-[var(--s)]'
+            )}
             href="https://linkedin.com/in/jungsnn"
           >
             <div>Li.</div>
           </Link>
           <Link
-            className={cn([styles.socialLink, styles.wInlineBlock])}
+            className={cn(
+              'text-[var(--base-body)] font-[700]',
+              'inline-block',
+              'mr-[var(--s)]'
+            )}
             href="https://twitter.com/jungsnn"
           >
             <div>Tw.</div>
@@ -48,7 +77,15 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
             {showLogo ? <p>logo</p> : <></>}
           </div>
         </div>
-        <div className={styles.menuButtonWrapper}>
+        <div
+          className={cn(
+            'flex flex-row',
+            'items-center justify-end',
+            'h-[4.375rem]',
+            'order-1',
+            'hidden'
+          )}
+        >
           <div
             className={cn(['justify-self-center', styles.hamburger])}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
