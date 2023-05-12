@@ -82,8 +82,7 @@
   .rect3d {
     width: 801px;
     height: 401px;
-    /* transform: translateZ(445px); */
-    transform: translateZ(167px);
+    transform: translateZ(250px);
   }
 
   .dimension {

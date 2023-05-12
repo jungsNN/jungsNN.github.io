@@ -25,7 +25,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
             className={cn(
               styles.bannerTitle,
               'text-[var(--base-body-inverted)]',
-              'text-[calc(100vw*(128/2560))]'
+              'text-[calc(100vw*(128/2560))] xl:text-[4rem]'
             )}
           >
             Jenny Jung
