@@ -10,7 +10,6 @@
   font-family: 'Sofachrome';
   position: sticky;
   top: 0;
-  transform: rotate(270deg) translateX(-50%);
   white-space: nowrap;
 }
 

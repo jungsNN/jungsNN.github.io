@@ -29,7 +29,7 @@ const projectData = [
   {
     id: 3,
     cid: 'bafybeifkre5xoieovqjokmp4phdyobl544wlpinomlf6hoh2u7mcwm2lba',
-    url: 'https://cybershrooms.org',
+    url: '/cv/cybershrooms',
     size: { width: '800', height: '800' },
     title: 'Cybershrooms',
     year: '2022',

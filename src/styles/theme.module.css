@@ -3,8 +3,13 @@
   --green: #70ff00;
   --orange: #d2691e;
 
+  --body-100: #000000;
+  --body-200: #231f20;
+  --body-300: #6b6f70;
+
   --base-100: #dec9eb;
-  --base-body: #000000;
+  --base-200: #f3f2f1;
+  --base-body: var(--body-100);
   --base-body-inverted: #e0ffff;
 
   --primary: #9255de;

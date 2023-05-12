@@ -1,11 +1,9 @@
 import cn from 'classnames';
+import Link from 'next/link';
 import { useState } from 'react';
 import { CloseIcon, MenuIcon } from '@/components/svgs';
 import styles from './index.module.css';
 import Menu from '../Menu';
-import Link from 'next/link';
-
-const SITE_URL = process.env.SITE_URL;
 
 interface AppBarProps {
   showLogo?: boolean;
@@ -37,13 +35,13 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
           'items-center justify-between',
           'sm:min-h-[var(--s)]',
           'm-x-auto',
-          'p-[var(--s-xs)_5%] sm:p-[var(--s-sm)_5%]',
+          'p-[var(--s)_5%] sm:p-[var(--s)_5%]',
           'space-[var(--s-md)]',
           'z-20'
         )}
       >
         <div className="text-lg sm:text-base">
-          <AppbarLink label="CV" url={`${SITE_URL}/cv`} />
+          <AppbarLink label="CV" url={`/cv`} />
           <AppbarLink label="Gh." url="https://github.com/jungsNN" />
           <AppbarLink label="Li." url="https://linkedin.com/in/jungsNN" />
           <AppbarLink label="Tw." url="https://twitter.com/jungsNN" />
@@ -101,7 +99,7 @@ const AppbarLink = ({ label, url }: { label: string; url: string }) => {
     <Link
       className={cn('inline-block', 'mr-[var(--s-sm)] md:mr-[var(--s)]')}
       href={url}
-      target="_blank"
+      target={url.startsWith('http') ? '_blank' : undefined}
     >
       <span className="text-[var(--accent)]">{'//'}</span>
       <span

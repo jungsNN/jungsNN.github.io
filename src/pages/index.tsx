@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Page from '@/components/Page';
 import Slide from '@/components/Slide';
 import { projectContents } from 'constants/projects';
@@ -154,9 +155,10 @@ const Home: NextPage = () => {
     <Page name="home">
       <div
         className={cn(
-          'w-full',
+          'self-start',
           'pl-[var(--s-256)]',
-          'mt-[var(--s-md)] mr-[var(--s-256)] md:mr-0'
+          'mt-[var(--s-md)] mr-[var(--s-256)] md:mr-0',
+          'z-30'
         )}
       >
         <div
@@ -165,7 +167,6 @@ const Home: NextPage = () => {
             'font-bold',
             'px-[var(--s-xs)] pb-[var(--s-xs)] pt-[var(--s)]',
             'w-full sm:w-[17.5rem] lg:w-[27.5rem]',
-            'z-50',
             'lowercase',
             'text-end',
             'italic'
@@ -186,6 +187,12 @@ const Home: NextPage = () => {
             ))
           )}
         </div>
+        <div className={cn('grid grid-cols-2', 'w-full h-auto')}>
+          <LinkBlock path="/cv" text="CV" />
+          <LinkBlock path="/cv" text="CV" />
+          <LinkBlock path="/cv" text="CV" />
+          <LinkBlock path="/cv" text="CV" />
+        </div>
       </div>
       <div
         className={cn(
@@ -193,12 +200,55 @@ const Home: NextPage = () => {
           'sm:absolute right-0 top-0 bottom-0',
           'scroll-smooth',
           'md:overflow-y-auto md:overflow-x-hidden',
-          'w-full'
+          'w-full',
+          'z-20'
         )}
       >
         <Slide contents={contentsFromLatest} />
       </div>
     </Page>
+  );
+};
+
+const LinkBlock = (props?: { path?: string; text?: string }) => {
+  const { path, text } = props ?? {};
+  if (path) {
+    return (
+      <div
+        className={cn(
+          'aspect-square',
+          'flex items-center justify-center',
+          'bg-[var(--orange)] hover:opacity-60',
+          'p-[var(--s-sm)] md:p-[var(--s)]',
+          'transform-all duration-75 ease-in-out'
+        )}
+      >
+        <Link href={path}>
+          <p className={cn('text-center text-3xl md:text-8xl font-[500]')}>
+            {text}
+          </p>
+        </Link>
+      </div>
+    );
+  }
+  return (
+    <div
+      className={cn(
+        'aspect-square',
+        'flex items-center justify-center',
+        'bg-[var(--base-body)]',
+        'p-[var(--s-sm)] md:p-[var(--s)]',
+        'transform-all duration-75 ease-in-out'
+      )}
+    >
+      <p
+        className={cn(
+          'text-center text-3xl md:text-8xl text-[var(--base-body-inverted)] font-[500]'
+        )}
+      >
+        {text}
+      </p>
+    </div>
   );
 };
 
