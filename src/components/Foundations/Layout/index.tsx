@@ -6,6 +6,7 @@ import theme from '@/styles/theme.module.css';
 import { mobile, desktop } from '@/styles/layouts';
 import AppBar from '@/components/AppBar';
 import SideBar from '@/components/SideBar';
+import Page from '@/components/Page';
 
 const SITE_URL = process.env.SITE_URL;
 
@@ -27,18 +28,34 @@ const LayoutWrapper = ({
   children: React.ReactNode;
   path: string;
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [activePage, setActivePage] = useState<string>('home');
+  const [isMobile, setIsMobile] = useState<boolean | undefined>();
 
   useEffect(() => {
+    const saveToSession = (isMobile: boolean) => {
+      sessionStorage.setItem('isMobile', `${isMobile}`);
+      setIsMobile(isMobile);
+    };
     window.addEventListener('resize', () =>
-      setIsMobile(window.innerWidth < 480)
+      saveToSession(window.innerWidth < 768)
     );
     return () => {
       window.removeEventListener('resize', () =>
-        setIsMobile(window.innerWidth < 480)
+        saveToSession(window.innerWidth < 768)
       );
     };
   }, []);
+
+  useEffect(() => {
+    if (path === '' || path === '/') {
+      setActivePage('home');
+    } else {
+      const pathSplit = (path.startsWith('/') ? path.slice(1) : path).split(
+        '/'
+      );
+      setActivePage(pathSplit[0]);
+    }
+  }, [path]);
 
   return (
     <>
@@ -47,10 +64,11 @@ const LayoutWrapper = ({
           `${theme.theme}`,
           `${isMobile ? mobile : desktop}`,
           'block',
-          'm-0'
+          'm-0',
+          'relative'
         )}
       >
-        <AppBar />
+        {activePage && <AppBar activePage={activePage} />}
         <SideBar isMain={path === '/'} />
         <main
           className={cn(
@@ -61,7 +79,7 @@ const LayoutWrapper = ({
             'translate-x-0'
           )}
         >
-          {children}
+          <Page name={activePage}>{children}</Page>
         </main>
       </div>
     </>

@@ -184,7 +184,7 @@ const zaporacles = {
 
 const votewatcher = {
   id: 5,
-  name: 'Votewatcher',
+  name: 'VoteWatcher',
   description:
     'Virtual poll watching solution for voter transparency utilizing blockchain technology. It uploads an image, timestamp and GPS coordinates as an incident report onto IPFS as an NFT. This serves as a reporting solution for voter security.',
   archived: false,
@@ -214,6 +214,14 @@ const votewatcher = {
     },
   ],
   slug: 'votewatcher',
+};
+
+export const cvPreviewImg = {
+  id: 0,
+  label: 'cv-preview',
+  text: 'CV',
+  pageUrl: '/cv',
+  cid: 'bafkreibcvan3zz2cgc7lbuocgh6vwvy4lvndqpzz4t3etomugtfeuwuzfa',
 };
 
 const cv = {

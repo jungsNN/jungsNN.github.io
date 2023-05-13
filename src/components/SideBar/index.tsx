@@ -15,7 +15,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
     {
       'text-[var(--base-body-inverted)] text-[calc(100vw*(128/2560))] xl:text-[4rem]':
         isMain,
-      'text-[var(--accent)] text-2xl xl:text-3xl transform:translate-y-[-100%]':
+      'text-[var(--base-body-inverted)] text-2xl xl:text-3xl transform:translate-y-[-100%]':
         !isMain,
     }
   );
@@ -35,7 +35,11 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
       )}
     >
       <div className={cn('relative')}>
-        <Link href="/">
+        <Link
+          href={{
+            pathname: '',
+          }}
+        >
           {isMain ? (
             <h1
               className={titleStyle}

@@ -6,12 +6,13 @@ import styles from './index.module.css';
 import Menu from '../Menu';
 
 interface AppBarProps {
+  activePage: string;
   showLogo?: boolean;
   showMenuText?: boolean;
 }
 
 const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
-  const { showLogo, showMenuText } = props;
+  const { activePage, showLogo, showMenuText } = props;
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenuItem = () => {
@@ -33,15 +34,14 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
           'relative',
           'flex flex-row',
           'items-center justify-between',
-          'sm:min-h-[var(--s)]',
-          'm-x-auto',
+          'min-h-[var(--s-lg)] sm:min-h-[var(--s)]',
           'p-[var(--s)_5%] sm:p-[var(--s)_5%]',
-          'space-[var(--s-md)]',
           'z-20'
         )}
       >
         <div className="text-lg sm:text-base">
-          <AppbarLink label="CV" url={`/cv`} />
+          <AppbarLink label="Hm." isActive={activePage === 'home'} url={`/`} />
+          <AppbarLink label="Cv." isActive={activePage === 'cv'} url={`/cv`} />
           <AppbarLink label="Gh." url="https://github.com/jungsNN" />
           <AppbarLink label="Li." url="https://linkedin.com/in/jungsNN" />
           <AppbarLink label="Tw." url="https://twitter.com/jungsNN" />
@@ -94,19 +94,45 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
   );
 };
 
-const AppbarLink = ({ label, url }: { label: string; url: string }) => {
+const AppbarLink = ({
+  label,
+  url,
+  isActive,
+}: {
+  label: string;
+  url: string;
+  isActive?: boolean;
+}) => {
+  const isExternal = url.startsWith('http');
   return (
     <Link
-      className={cn('inline-block', 'mr-[var(--s-sm)] md:mr-[var(--s)]')}
-      href={url}
-      target={url.startsWith('http') ? '_blank' : undefined}
+      className={cn(
+        'group inline-block mr-[var(--s)] md:mr-[var(--s)]',
+        'text-sm sm:text-base'
+      )}
+      href={
+        isExternal
+          ? url
+          : {
+              pathname: url,
+            }
+      }
+      target={isExternal ? '_blank' : undefined}
     >
-      <span className="text-[var(--accent)]">{'//'}</span>
       <span
-        className={cn(
-          'text-[var(--orange)] hover:text-[var(--accent)] active:text-[var(--accent)] font-[800]',
-          'transform-all duration-75 ease-in-out'
-        )}
+        className={cn('font-[800]', 'transform-all duration-75 ease-in-out', {
+          'text-[var(--base-body)] group-hover:text-[var(--base-body-inverted)] group-focus:text-[var(--base-body-inverted)]':
+            !isActive,
+          'text-[var(--base-body-inverted)] ': isActive,
+        })}
+      >
+        {'//'}
+      </span>
+      <span
+        className={cn('font-[800]', 'transform-all duration-75 ease-in-out', {
+          'text-[var(--base-body-inverted)]': isActive,
+          'text-[var(--base-body)]': !isActive,
+        })}
       >
         {label}
       </span>

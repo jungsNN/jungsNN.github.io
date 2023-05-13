@@ -11,9 +11,10 @@
   --s-max: 12rem; /* max 48 */
 
   /* Text */
-  --font-body: 0.8rem;
-  --subtitle-size: 0.75rem;
-  --title-size: 1.25rem;
+  --body-sm: 0.75rem; /* 48 */
+  --body-base: 1rem; /* 48 */
+  --body-lg: 3rem; /* 48 */
+  --title-size: 3.25rem;
 
   /* Page */
   --page-maxw: 100%;
@@ -32,9 +33,11 @@
   --s-max: 16rem; /* max 64 */
 
   /* Text */
-  --font-body: 1rem;
+  --body-sm: 0.75rem; /* 48 */
+  --body-base: 1rem; /* 48 */
+  --body-lg: 3rem; /* 48 */
   --subtitle-size: 0.8rem;
-  --title-size: 1.5rem;
+  --title-size: 3.25rem;
 
   /* Page */
   --page-maxw: 1440px;

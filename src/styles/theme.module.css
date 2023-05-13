@@ -2,6 +2,7 @@
   --blue: #0000ff;
   --green: #70ff00;
   --orange: #d2691e;
+  --hot-pink: #ff00d4;
 
   --body-100: #000000;
   --body-200: #231f20;
@@ -9,7 +10,7 @@
 
   --base-100: #dec9eb;
   --base-200: #f3f2f1;
-  --base-body: var(--body-100);
+  --base-body: var(--body-200);
   --base-body-inverted: #e0ffff;
 
   --primary: #9255de;
@@ -18,6 +19,9 @@
 
   --bg-color: var(--base-100);
   --surface-base: var(--primary);
+
+  --btn-color: var(--hot-pink);
+  --btn-focus: var(--orange);
 
   --border-color: var(--base-body);
   --line-color: var(--secondary);
