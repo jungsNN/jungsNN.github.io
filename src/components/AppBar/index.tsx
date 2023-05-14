@@ -1,9 +1,6 @@
 import cn from 'classnames';
 import Link from 'next/link';
-import { useState } from 'react';
-import { CloseIcon, MenuIcon } from '@/components/svgs';
 import styles from './index.module.css';
-import Menu from '../Menu';
 
 interface AppBarProps {
   activePage: string;
@@ -12,14 +9,7 @@ interface AppBarProps {
 }
 
 const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
-  const { activePage, showLogo, showMenuText } = props;
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-  const toggleMenuItem = () => {
-    setTimeout(() => {
-      setIsMenuOpen(false);
-    }, 100);
-  };
+  const { activePage, showLogo } = props;
 
   return (
     <div
@@ -50,45 +40,7 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
             {showLogo ? <p>logo</p> : <></>}
           </div>
         </div>
-        {/* <div
-          className={cn(
-            'flex flex-row',
-            'items-center justify-end',
-            'h-[4.375rem]',
-            'order-1',
-            'collapse'
-          )}
-        >
-          <div
-            className={cn(['justify-self-center', styles.hamburger])}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <div className={cn([styles.menuIcon, styles._2])}>
-              {!isMenuOpen && (
-                <MenuIcon
-                  className={cn([styles.open])}
-                  color="var(--royal-blue)"
-                />
-              )}
-              {isMenuOpen && (
-                <CloseIcon
-                  className={styles.remove}
-                  color="var(--royal-blue)"
-                />
-              )}
-            </div>
-            {showMenuText && (
-              <div className={cn(['display-block', styles.menuLabelWrapper])}>
-                <div className="menu-label">
-                  {isMenuOpen ? 'Close' : 'Menu'}
-                </div>
-                <div className="menu-label">Close</div>
-              </div>
-            )}
-          </div>
-        </div> */}
       </div>
-      {/* <Menu isOpen={isMenuOpen} onClose={toggleMenuItem} /> */}
     </div>
   );
 };
@@ -106,8 +58,6 @@ const AppbarLink = ({
   return (
     <Link
       className={cn(
-        // 'text-xs xs:text-md sm:text-lg',
-        // 'font-[700]',
         'navlink group inline-block mr-[var(--s-sm)] sm:mr-[var(--s)]'
       )}
       href={
