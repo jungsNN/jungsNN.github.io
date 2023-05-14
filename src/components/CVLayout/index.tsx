@@ -5,9 +5,14 @@ import { Button } from '../Foundations';
 import { CV, ColumnEntry, TableData } from './index.types';
 import Link from 'next/link';
 
-const headerStyles = ['text-2xl text-[var(--body-300)] font-[700]'];
-const labelStyles = ['text-md text-[var(--body-200)] font-[600]'];
-const bodyStyles = ['text-base text-[var(--body-300)] font-[500]'];
+const headerStyles = ['text-2xl text-[var(--body-300)] font-[600]'];
+const labelStyles = ['text-sm sm:text-md text-[var(--body-200)] font-[400]'];
+const bodyShared = 'text-[var(--body-300)] font-[300]';
+const bodyStyles = ['text-base', bodyShared];
+const tbodyStyles = ['text-xs sm:text-sm xs:whitespace-nowrap', bodyShared];
+const textBtnStyle = cn(
+  "text-[var(--body-200)] group-hover:text-[var(--btn-base)] group-focus:text-[var(--btn-base)]','transform-all duration-75 ease-in"
+);
 
 const CVLayout = ({
   cvData,
@@ -23,7 +28,7 @@ const CVLayout = ({
   showBackButton?: boolean;
 }) => {
   return (
-    <div className="p-[var(--s-md)_0] md:p-[var(--s-lg)_0] md:p-[10%_var(--s-256)] relative">
+    <div className="font-doc p-[var(--s-md)_0] md:p-[var(--s-lg)_0] md:p-[10%_var(--s-256)] relative">
       <div
         className={cn(
           'absolute bottom-[calc(var(--s-lg))] md:bottom-[var(--s)] right-[calc(var(--s-sm))] md:right-[calc(var(--s-sm)+var(--s-256))]'
@@ -51,15 +56,15 @@ const CVLayout = ({
         </div>
       )}
       {onNavigate && prevPage && (
-        <div className={cn('w-full flex items-center justify-center')}>
+        <div className={cn('group flex items-center justify-center')}>
           <Button
             color="transparent"
             disabled={cvData.id === 0}
             onClick={() => onNavigate('/cv/' + prevPage.slug)}
             variant="sm"
           >
-            <p className="text-[var(--base-300)]">▴</p>
-            <p className="text-[var(--base-300)]">{prevPage.name}</p>
+            <p className={textBtnStyle}>▴</p>
+            <p className={textBtnStyle}>{prevPage.name}</p>
           </Button>
         </div>
       )}
@@ -70,7 +75,7 @@ const CVLayout = ({
           'p-[var(--s)_var(--s-sm)] sm:p-[var(--s)_var(--s-md)] lg:p-[var(--s-lg)_9%] lg:max-w-[1024px] z-50'
         )}
       >
-        <h2 className={cn('text-4xl text-[var(--body-100)] font-[700]')}>
+        <h2 className={cn('text-4xl text-[var(--body-100)] font-[600]')}>
           {`${cvData.name}${cvData.archived ? ' (archived)' : ''}`}
         </h2>
         <h3 className={cn(headerStyles)}>Summary</h3>
@@ -103,9 +108,7 @@ const CVLayout = ({
       </div>
       {onNavigate && nextPage && (
         <div
-          className={cn(
-            'w-full flex items-center justify-center backdrop-contrast-[70%]'
-          )}
+          className={cn('group self-center flex items-center justify-center')}
         >
           <Button
             color="transparent"
@@ -113,8 +116,8 @@ const CVLayout = ({
             onClick={() => onNavigate('/cv/' + nextPage.slug)}
             variant="sm"
           >
-            <p className="text-[var(--base-300)]">{nextPage.name}</p>
-            <p className="text-[var(--base-300)]">▾</p>
+            <p className={textBtnStyle}>{nextPage.name}</p>
+            <p className={textBtnStyle}>▾</p>
           </Button>
         </div>
       )}
@@ -178,13 +181,9 @@ const Table = ({ data }: { data: TableData }) => {
   const tableKey = `${title.toLowerCase().replaceAll(' ', '_')}`;
 
   return (
-    <table>
+    <table className="flex flex-col">
       <thead>
-        <tr
-          className={cn(
-            'grid grid-cols-3 gap-[var(--s-xs)] sm:gap-[var(--s-md)] lg:gap-[var(--s-lg)]'
-          )}
-        >
+        <tr className={cn('grid grid-cols-3')}>
           {columns.map((col) => (
             <th
               key={`${tableKey}--${col.key}`}
@@ -197,18 +196,10 @@ const Table = ({ data }: { data: TableData }) => {
       </thead>
       <tbody>
         {Object.values(rows).map((values, r) => (
-          <tr
-            key={`${tableKey}--r${r}`}
-            className={cn(
-              'grid grid-cols-3 gap-[var(--s-xs)] sm:gap-[var(--s-md)] lg:gap-[var(--s-lg)]'
-            )}
-          >
+          <tr key={`${tableKey}--r${r}`} className={cn('grid grid-cols-3')}>
             {values.map((entry) => (
               <td
-                className={cn(
-                  bodyStyles,
-                  'text-xs sm:text-sm whitespace-nowrap'
-                )}
+                className={cn(tbodyStyles)}
                 key={`${tableKey}-${entry.key}--r${r}`}
               >
                 {entry.value}

@@ -46,14 +46,14 @@ const Slide: React.FC<Props> = (props) => {
               className={cn(
                 'invisible md:visible',
                 'italic underline uppercase',
-                'focus:text-[var(--btn-focus)] hover:text-[var(--btn-focus)]',
+                'text-base-body focus:text-[var(--blue)] focus-visited:text-[var(--blue)] hover:text-[var(--blue)]',
                 'transform-all duration-75 ease-in-out',
                 'z-40',
                 defaultLayout
               )}
             >
-              <p>{`${content.title}`}</p>
-              <p>{`(${metadata.year})`}</p>
+              <p className="inline">{`${content.title}`}</p>
+              <p className="inline">{`(${metadata.year})`}</p>
             </Link>
             <div className="group block relative">
               <Image

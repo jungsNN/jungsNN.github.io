@@ -5,7 +5,7 @@ import '@/styles/index.css';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Layout>
+      <Layout classes={['font-body']}>
         <Component {...pageProps} />
       </Layout>
     </>
