@@ -13,9 +13,9 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
     styles.bannerTitle,
     'transform-all duration-75 ease-in',
     {
-      'text-[var(--base-body-inverted)] text-[calc(100vw*(128/2560))] xl:text-[4rem]':
+      'text-[var(--base-body-inverted)] text-[calc(100vw*(128/2560))] xl:text-[4.5rem]':
         isMain,
-      'opacity-50 text-[var(--base-body-inverted)] text-[calc(100vw*(256/2560))] xs:text-[calc(100vw*(128/2560))]':
+      'opacity-50 text-[var(--base-body-inverted)] text-[calc(100vw*(256/2560))] xs:text-[calc(100vw*(128/2560))] xl:text-[4.5rem]':
         !isMain,
     }
   );

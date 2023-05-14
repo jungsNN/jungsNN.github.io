@@ -24,16 +24,14 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
   return (
     <div
       className={cn(
-        'fixed bottom-auto left-0 right-0 top-0',
-        'z-80',
-        'pl-[var(--s-256)]'
+        'fixed bottom-auto left-auto xs:left-[var(--s-256)] right-0 xs:right-auto top-[var(--s-sm)] sm:top-0',
+        'z-80'
       )}
     >
       <div
         className={cn(
           'relative',
-          'flex flex-row',
-          'items-center justify-between',
+          'inline',
           'min-h-[var(--s-md)] sm:min-h-[var(--s)]',
           'z-20',
           'p-[var(--s-sm)_0%] sm:p-[var(--s)_5%]'
