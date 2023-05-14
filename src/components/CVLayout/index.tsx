@@ -23,7 +23,7 @@ const CVLayout = ({
   showBackButton?: boolean;
 }) => {
   return (
-    <div className="p-[var(--s-lg)_0] md:p-[10%_var(--s-256)] relative">
+    <div className="p-[var(--s-md)_0] md:p-[var(--s-lg)_0] md:p-[10%_var(--s-256)] relative">
       <div
         className={cn(
           'absolute bottom-[calc(var(--s-lg))] md:bottom-[var(--s)] right-[calc(var(--s-sm))] md:right-[calc(var(--s-sm)+var(--s-256))]'
@@ -67,7 +67,7 @@ const CVLayout = ({
         className={cn(
           'bg-[var(--base-200)]',
           'flex flex-col space-y-[var(--s)]',
-          'p-[var(--s-md)_var(--s)] sm:p-[var(--s)_var(--s-md)] lg:p-[var(--s-lg)_9%] lg:max-w-[1024px] z-50'
+          'p-[var(--s)_var(--s-sm)] sm:p-[var(--s)_var(--s-md)] lg:p-[var(--s-lg)_9%] lg:max-w-[1024px] z-50'
         )}
       >
         <h2 className={cn('text-4xl text-[var(--body-100)] font-[700]')}>

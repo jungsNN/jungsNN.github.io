@@ -15,7 +15,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
     {
       'text-[var(--base-body-inverted)] text-[calc(100vw*(128/2560))] xl:text-[4rem]':
         isMain,
-      'text-[var(--base-body-inverted)] text-2xl xl:text-3xl transform:translate-y-[-100%]':
+      'opacity-50 text-[var(--base-body-inverted)] text-[calc(100vw*(256/2560))] xs:text-[calc(100vw*(128/2560))]':
         !isMain,
     }
   );
@@ -28,10 +28,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
         'transform-all duration-75 ease-in',
         'w-[calc(100vw*(256/2560))]',
         'z-10',
-        {
-          'h-[calc(100vw*(128*2560))] sm:h-[100%] justify-center': isMain,
-          'justify-end left-[var(--s-lg)]': !isMain,
-        }
+        'h-[100%] justify-center'
       )}
     >
       <div className={cn('relative')}>
@@ -40,25 +37,14 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
             pathname: '',
           }}
         >
-          {isMain ? (
-            <h1
-              className={titleStyle}
-              style={{
-                transform: 'rotate(-90deg) translateX(-50%)',
-              }}
-            >
-              Jenny Jung
-            </h1>
-          ) : (
-            <h1
-              className={titleStyle}
-              style={{
-                transform: 'rotate(-90deg) translateX(-55%)',
-              }}
-            >
-              Jenny Jung
-            </h1>
-          )}
+          <h1
+            className={titleStyle}
+            style={{
+              transform: 'rotate(-90deg) translateX(-55%)',
+            }}
+          >
+            Jenny Jung
+          </h1>
         </Link>
       </div>
     </div>

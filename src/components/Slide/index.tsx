@@ -29,8 +29,8 @@ const Slide: React.FC<Props> = (props) => {
         'flex flex-col items-center justify-between'
       )}
     >
-      <div className="text-sm text-center font-[600] translate-y-[var(--s-lg)] md:hidden">
-        Tap preview images to visit the site or read a summary
+      <div className="text-sm text-center text-[var(--body-300)] font-[600] mx-[var(--s-sm)] translate-y-[var(--s)] sm:translate-y-[var(--s-lg)] md:hidden">
+        {`(Tap preview images to visit the site or read a summary)`}
       </div>
       {items.map((content) => {
         const metadata = JSON.parse(JSON.stringify(content.metadata));

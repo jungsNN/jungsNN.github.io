@@ -25,8 +25,8 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
     <div
       className={cn(
         'fixed bottom-auto left-0 right-0 top-0',
-        'pl-[var(--s-256)]',
-        'z-80'
+        'z-80',
+        'pl-[var(--s-256)]'
       )}
     >
       <div
@@ -34,12 +34,12 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
           'relative',
           'flex flex-row',
           'items-center justify-between',
-          'min-h-[var(--s-lg)] sm:min-h-[var(--s)]',
-          'p-[var(--s)_5%] sm:p-[var(--s)_5%]',
-          'z-20'
+          'min-h-[var(--s-md)] sm:min-h-[var(--s)]',
+          'z-20',
+          'p-[var(--s-sm)_0%] sm:p-[var(--s)_5%]'
         )}
       >
-        <div className="text-lg sm:text-base">
+        <div>
           <AppbarLink label="Hm." isActive={activePage === 'home'} url={`/`} />
           <AppbarLink label="Cv." isActive={activePage === 'cv'} url={`/cv`} />
           <AppbarLink label="Gh." url="https://github.com/jungsNN" />
@@ -107,8 +107,9 @@ const AppbarLink = ({
   return (
     <Link
       className={cn(
-        'group inline-block mr-[var(--s)] md:mr-[var(--s)]',
-        'text-sm sm:text-base'
+        'text-xs xs:text-base sm:text-lg',
+        'font-[800]',
+        'group inline-block mr-[var(--s-sm)] sm:mr-[var(--s)]'
       )}
       href={
         isExternal
@@ -120,7 +121,7 @@ const AppbarLink = ({
       target={isExternal ? '_blank' : undefined}
     >
       <span
-        className={cn('font-[800]', 'transform-all duration-75 ease-in-out', {
+        className={cn('transform-all duration-75 ease-in-out', {
           'text-[var(--base-body)] group-hover:text-[var(--base-body-inverted)] group-focus:text-[var(--base-body-inverted)]':
             !isActive,
           'text-[var(--base-body-inverted)] ': isActive,
@@ -129,7 +130,7 @@ const AppbarLink = ({
         {'//'}
       </span>
       <span
-        className={cn('font-[800]', 'transform-all duration-75 ease-in-out', {
+        className={cn('transform-all duration-75 ease-in-out', {
           'text-[var(--base-body-inverted)]': isActive,
           'text-[var(--base-body)]': !isActive,
         })}

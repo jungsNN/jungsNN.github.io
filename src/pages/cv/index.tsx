@@ -7,7 +7,7 @@ import cvEntries from '@/models/cvEntries';
 const CVMain = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex justify-end w-full translate-y-[var(--s-lg)] relative z-20">
+      <div className="flex justify-end w-full translate-y-[var(--s-md)] md:translate-y-[var(--s-lg)] relative z-20 pr-[var(--s)] md:pr-[var(--s-md)]">
         <Link href="/">
           <Button variant="sm">exit</Button>
         </Link>
@@ -23,7 +23,7 @@ const CVMain = () => {
       >
         {cvEntries.map((c) => {
           return (
-            <div key={c.slug} className={cn('sticky')}>
+            <div key={c.slug} className={cn('snap-center snap-always')}>
               <CVLayout cvData={c} />
             </div>
           );

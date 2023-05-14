@@ -49,7 +49,7 @@ const Home: NextPage = () => {
         <div
           className={cn(
             'font-[600]',
-            'px-[var(--s-xs)] pb-[var(--s-xs)] pt-[var(--s-lg)]',
+            'px-[var(--s-xs)] pt-[var(--s-md)] sm:pt-[var(--s-lg)]',
             'w-full max-w-[31.5rem]',
             'lowercase',
             'text-center',
