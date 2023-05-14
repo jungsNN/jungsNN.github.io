@@ -40,7 +40,7 @@ const SideBar: React.FunctionComponent<SideBarProps> = (props) => {
           <h1
             className={titleStyle}
             style={{
-              transform: 'rotate(-90deg) translateX(-55%)',
+              transform: 'rotate(-90deg) translateX(-50%)',
             }}
           >
             Jenny Jung

@@ -11,15 +11,15 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       className={cn(
-        'opacity hover:opacity-60 focus:opacity-60',
         'text-center',
         'transform-all duration-75 ease-in',
         {
-          'bg-transparent active:bg-transparent text-[var(--base-300)] text-[var(--btn-focus)] active:text-[var(--btn-focus)] font-[600]':
+          'bg-transparent focus:bg-transparent font-body-bold text-[var(--base-body)] focus:text-[var(--btn-focus)]':
             variant === 'text' || variant === 'icon' || color === 'transparent',
-          'text-[var(--base-body-inverted)] hover:opacity-70 focus:text-[var(--btn-focus)]':
+          'text-[var(--body-200)] hover:opacity-90 focus:opacity':
             variant !== 'text' && variant !== 'icon' && color !== 'transparent',
-          'bg-[var(--btn-color)]': !color || color === 'default',
+          'bg-[var(--btn-base)] focus:bg-[var(--btn-focus)]':
+            !color || color === 'default',
           'p-[var(--s-xs)] text-sm': variant === 'sm',
           'p-[var(--s-sm)]': !variant || variant === 'md',
           'p-[var(--s)]': variant === 'lg',
@@ -28,6 +28,10 @@ const Button = (props: ButtonProps) => {
         classes
       )}
       onClick={onClick}
+      style={{
+        boxShadow: !color || color === 'default' ? 'var(--btn-shadow)' : 'none',
+        textShadow: 'var(--body-shadow)',
+      }}
     >
       {children}
     </button>

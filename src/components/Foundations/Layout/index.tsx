@@ -14,20 +14,23 @@ interface PageMeta {
   title: string;
   description: string;
   cardImage: string;
+  classes?: cn.ArgumentArray;
 }
 
 interface Props {
-  children: React.ReactNode;
   meta?: PageMeta;
+  classes?: cn.ArgumentArray;
 }
 
-const LayoutWrapper = ({
-  children,
-  path = '/',
-}: {
-  children: React.ReactNode;
+interface WrapperProps {
   path: string;
-}) => {
+  classes?: cn.ArgumentArray;
+}
+
+const LayoutWrapper: React.FunctionComponent<
+  React.PropsWithChildren & WrapperProps
+> = (props) => {
+  const { children, classes, path } = props;
   const [activePage, setActivePage] = useState<string>('home');
   const [isMobile, setIsMobile] = useState<boolean | undefined>();
 
@@ -76,7 +79,8 @@ const LayoutWrapper = ({
             'flex flex-col',
             'items-center justify-center',
             'w-full',
-            'translate-x-0'
+            'translate-x-0',
+            classes
           )}
         >
           <Page name={activePage}>{children}</Page>
@@ -86,12 +90,15 @@ const LayoutWrapper = ({
   );
 };
 
-export default function Layout({ children, meta: pageMeta }: Props) {
+const Layout: React.FunctionComponent<React.PropsWithChildren & Props> = (
+  props
+) => {
+  const { children, meta: pageMeta, classes } = props;
   const router = useRouter();
 
   const meta = {
     title: 'Jenny Jung',
-    description: 'Software Engineer, Portfolio 2023',
+    description: 'Software Engineer, portfolio (2023)',
     cardImage: '',
     ...pageMeta,
   };
@@ -109,7 +116,11 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
       </Head>
-      <LayoutWrapper path={router.pathname}>{children}</LayoutWrapper>
+      <LayoutWrapper path={router.pathname} classes={classes}>
+        {children}
+      </LayoutWrapper>
     </>
   );
-}
+};
+
+export default Layout;

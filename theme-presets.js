@@ -1,10 +1,14 @@
+/** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ['Fahkwong', 'sans-serif'],
-      cyber: ['Sofachrome', 'sans-serif']
+      body: ['yrsa', ...fontFamily.serif],
+      'body-bold': ['yrsa-bold', ...fontFamily.serif],
+      doc: ['source-sans-pro', ...fontFamily.sans],
+      sofachrome: ['sofachrome', ...fontFamily.sans]
     },
     extend: {
       aspectRatio: {
@@ -30,23 +34,33 @@ module.exports = {
         16: '16',
       },
       colors: {
-        'soft-blue': '#cdebeb',
-        'royal-blue': '#0115a8',
-        background: {
-          light: '#cdebeb',
-          DEFAULT: '#cdebeb',
-          dark: '#000000',
+      
+        // 'soft-blue': '#cdebeb',
+        // 'royal-blue': '#0115a8',
+        // background: {
+        //   light: '#cdebeb',
+        //   DEFAULT: '#cdebeb',
+        //   dark: '#000000',
+        // },
+        // blue: {
+        //   light: '#cdebeb',
+        //   DEFAULT: '#cdebeb',
+        //   dark: '#0115a8',
+        // },
+        // info: {
+        //   light: '#0115a8',
+        //   DEFAULT: '#0115a8',
+        //   dark: '#fbe95e',
+        // },
+        body: {
+          DEFAULT: 'var(--base-body)',
+          100: 'var(--body-100)',
+          200: 'var(--body-200)',
+          300: 'var(--body-300)',
         },
-        blue: {
-          light: '#cdebeb',
-          DEFAULT: '#cdebeb',
-          dark: '#0115a8',
-        },
-        info: {
-          light: '#0115a8',
-          DEFAULT: '#0115a8',
-          dark: '#fbe95e',
-        },
+        'btn-color': 'var(--btn-color)',
+        'btn-focus': 'var(--btn-focus)',
+        black: '#000000',
         white: '#ffffff',
         gray: '#cdcdcd',
         red: '#ff0000',

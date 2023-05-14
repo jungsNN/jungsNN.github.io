@@ -4,18 +4,24 @@
 
 @layer base {
   @font-face {
-    font-family: 'Sofachrome';
-    src: url('../../public/static/fonts/sofachrome_rg_it.ttf');
-    src: url('../../public/static/fonts/sofachrome_rg_it.ttf')
-      format('truetype');
+    font-family: 'sofachrome-book';
+    src: url('../../public/static/fonts/sofachrome-book-italic.woff');
+    src: url('../../public/static/fonts/sofachrome-book-italic.woff')
+      format('woff');
     font-weight: 900;
     font-style: italic;
   }
+  @font-face {
+    font-family: 'yrsa-bold';
+    src: local('yrsa-bold');
+    font-weight: 900;
+    font-style: normal;
+  }
 
   :root {
-    /* --soft-blue: #cdebeb;
-    --royal-blue: #0115a8;
-    --yellow: #fbe95e; */
+    --font-sofachrome: 'sofachrome';
+    --font-body: 'yrsa', serif;
+    --font-doc: 'source-sans-pro', sans-serif;
     --parallax-offset: 30vh;
     --content-offset: 40vh;
     --transition-speed: 2s;
@@ -25,15 +31,19 @@
   body,
   #__next {
     background-color: #dec9eb;
-    font-family: Fahkwang, sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     overflow-x: hidden;
     color: #231f20;
   }
 
   a {
-    color: inherit;
     text-decoration: none;
+  }
+
+  p.navlink {
+    font-family: 'yrsa-bold';
+    font-weight: 900;
   }
 
   * {

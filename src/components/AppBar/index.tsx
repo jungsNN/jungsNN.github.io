@@ -25,7 +25,8 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
     <div
       className={cn(
         'fixed bottom-auto left-auto xs:left-[var(--s-256)] right-0 xs:right-auto top-[var(--s-sm)] sm:top-0',
-        'z-80'
+        'z-80',
+        'font-body-bold'
       )}
     >
       <div
@@ -37,7 +38,7 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
           'p-[var(--s-sm)_0%] sm:p-[var(--s)_5%]'
         )}
       >
-        <div>
+        <div className="">
           <AppbarLink label="Hm." isActive={activePage === 'home'} url={`/`} />
           <AppbarLink label="Cv." isActive={activePage === 'cv'} url={`/cv`} />
           <AppbarLink label="Gh." url="https://github.com/jungsNN" />
@@ -49,13 +50,13 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
             {showLogo ? <p>logo</p> : <></>}
           </div>
         </div>
-        <div
+        {/* <div
           className={cn(
             'flex flex-row',
             'items-center justify-end',
             'h-[4.375rem]',
             'order-1',
-            'hidden'
+            'collapse'
           )}
         >
           <div
@@ -85,9 +86,9 @@ const AppBar: React.FunctionComponent<AppBarProps> = (props) => {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
       </div>
-      <Menu isOpen={isMenuOpen} onClose={toggleMenuItem} />
+      {/* <Menu isOpen={isMenuOpen} onClose={toggleMenuItem} /> */}
     </div>
   );
 };
@@ -105,9 +106,9 @@ const AppbarLink = ({
   return (
     <Link
       className={cn(
-        'text-xs xs:text-base sm:text-lg',
-        'font-[800]',
-        'group inline-block mr-[var(--s-sm)] sm:mr-[var(--s)]'
+        // 'text-xs xs:text-md sm:text-lg',
+        // 'font-[700]',
+        'navlink group inline-block mr-[var(--s-sm)] sm:mr-[var(--s)]'
       )}
       href={
         isExternal
@@ -118,23 +119,25 @@ const AppbarLink = ({
       }
       target={isExternal ? '_blank' : undefined}
     >
-      <span
-        className={cn('transform-all duration-75 ease-in-out', {
-          'text-[var(--base-body)] group-hover:text-[var(--base-body-inverted)] group-focus:text-[var(--base-body-inverted)]':
-            !isActive,
-          'text-[var(--base-body-inverted)] ': isActive,
-        })}
-      >
-        {'//'}
-      </span>
-      <span
-        className={cn('transform-all duration-75 ease-in-out', {
-          'text-[var(--base-body-inverted)]': isActive,
-          'text-[var(--base-body)]': !isActive,
-        })}
-      >
-        {label}
-      </span>
+      <p className="navlink">
+        <span
+          className={cn('transform-all duration-75 ease-in-out', {
+            'text-[var(--base-body)] group-hover:text-[var(--btn-base)] group-focus:text-[var(--btn-base)]':
+              !isActive,
+            'text-[var(--btn-base)] ': isActive,
+          })}
+        >
+          {'//'}
+        </span>
+        <span
+          className={cn('transform-all duration-75 ease-in-out', {
+            'text-[var(--btn-base)]': isActive,
+            'text-[var(--base-body)]': !isActive,
+          })}
+        >
+          {label}
+        </span>
+      </p>
     </Link>
   );
 };

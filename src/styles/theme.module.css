@@ -3,13 +3,16 @@
   --green: #70ff00;
   --orange: #d2691e;
   --hot-pink: #ff00d4;
+  --white: #ffffff;
 
   --body-100: #000000;
   --body-200: #231f20;
   --body-300: #6b6f70;
+  --body-shadow: 0px 0px 0px #bc8f8f;
 
   --base-100: #dec9eb;
   --base-200: #f3f2f1;
+  --base-300: #fffbea;
   --base-body: var(--body-200);
   --base-body-inverted: #e0ffff;
 
@@ -20,8 +23,9 @@
   --bg-color: var(--base-100);
   --surface-base: var(--primary);
 
-  --btn-color: var(--hot-pink);
-  --btn-focus: var(--orange);
+  --btn-base: #00f8ff;
+  --btn-focus: var(--white);
+  --btn-shadow: 0px -1px 0px 0px rosybrown;
 
   --border-color: var(--base-body);
   --line-color: var(--secondary);
