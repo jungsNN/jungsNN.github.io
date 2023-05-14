@@ -34,24 +34,6 @@ module.exports = {
         16: '16',
       },
       colors: {
-      
-        // 'soft-blue': '#cdebeb',
-        // 'royal-blue': '#0115a8',
-        // background: {
-        //   light: '#cdebeb',
-        //   DEFAULT: '#cdebeb',
-        //   dark: '#000000',
-        // },
-        // blue: {
-        //   light: '#cdebeb',
-        //   DEFAULT: '#cdebeb',
-        //   dark: '#0115a8',
-        // },
-        // info: {
-        //   light: '#0115a8',
-        //   DEFAULT: '#0115a8',
-        //   dark: '#fbe95e',
-        // },
         body: {
           DEFAULT: 'var(--base-body)',
           100: 'var(--body-100)',
